@@ -1,0 +1,9 @@
+@import "../../mixins/mixins";
+
+.theme-switcher {
+  line-height: 0.6;
+  font-size: toRem(24);
+  color: var(--text-primary);
+  padding: toRem(3);
+  transition: color 0.3s ease 0s;
+}

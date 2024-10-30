@@ -1,0 +1,23 @@
+@import "../../../shared/ui/mixins/mixins";
+
+.header {
+  transition: background-color 0.3s ease 0s;
+  background-color: var(--bg-secondary);
+  padding-block: toRem(20);
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__button {
+  transition: color 0.3s ease 0s;
+}
+
+.header__links {
+  display: flex;
+  align-items: center;
+  gap: toRem(20);
+}

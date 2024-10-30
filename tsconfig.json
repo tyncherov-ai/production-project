@@ -12,7 +12,13 @@
         // esModuleInterop позволяет работать с пакетами, которые используют common js(require() module.export) с помощью import
         "esModuleInterop": true,
         // allowSyntheticDefaultImports позволяет писать import без *
-        "allowSyntheticDefaultImports": true
+        "allowSyntheticDefaultImports": true,
+        "baseUrl": ".",
+        "paths": {
+            "*": [
+                "./src/*"
+            ]
+        }
     },
     "ts-node": {
         "compilerOptions": {
