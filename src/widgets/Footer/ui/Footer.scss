@@ -1,0 +1,11 @@
+@import "../../../shared/ui/mixins/mixins";
+
+.footer {
+  border-top: 1px solid rgba(127, 140, 141, 0.4);
+  border-radius: toRem(10) toRem(10) 0 0;
+  // .footer__container
+
+  &__container {
+    padding-block: toRem(20);
+  }
+}

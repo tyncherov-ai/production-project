@@ -2,22 +2,23 @@
 
 .header {
   transition: background-color 0.3s ease 0s;
-  background-color: var(--bg-secondary);
-  padding-block: toRem(20);
-}
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid rgba(127, 140, 141, 0.4);
 
-.header__container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+  &__container {
+    padding-block: toRem(20);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-.header__button {
-  transition: color 0.3s ease 0s;
-}
+  &__button {
+  }
 
-.header__links {
-  display: flex;
-  align-items: center;
-  gap: toRem(20);
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: toRem(20);
+    flex-grow: 1;
+  }
 }

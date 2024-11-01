@@ -1,27 +1,28 @@
 import { classNames } from "shared/lib/classNames/classNames";
 import './Navbar.scss';
 import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
-import { useTheme } from 'app/providers/ThemeProvider';
-import { ThemeSwitcher } from "shared/ui/ThemeSwitcher";
+import { useTranslation } from "react-i18next";
+import LangSwitcher from "shared/ui/LangSwitcher/ui/LangSwitcher";
 
 interface NavbarProps {
     className?: string;
 }
 
 export const Navbar = ({ className }: NavbarProps) => {
-    const { toggleTheme } = useTheme();
+    const { t } = useTranslation();
+
     return (
         <header className={classNames('header', {}, [className])}>
             <div className='header__container'>
                 <div className="header__links">
                     <AppLink theme={AppLinkTheme.PRIMARY} to={'/'} >
-                        Main
+                        {t('Main')}
                     </AppLink>
                     <AppLink theme={AppLinkTheme.PRIMARY} to={'/about'}>
-                        About
+                        {t('About')}
                     </AppLink>
+                    <LangSwitcher />
                 </div>
-                <ThemeSwitcher className="header__button" />
             </div>
         </header>
     );
