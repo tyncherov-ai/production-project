@@ -1,343 +1,191 @@
-@use "sass:math";
-//Підключення шрифту
+@use 'sass:math';
+
+// Подключение шрифта
 @mixin font($font_name, $file_name, $weight, $style) {
   @font-face {
     font-family: $font_name;
     font-display: swap;
-    src: url("../fonts/#{$file_name}.woff2") format("woff2"),
-      url("../fonts/#{$file_name}.woff") format("woff");
+    src:
+      url('../fonts/#{$file_name}.woff2') format('woff2'),
+      url('../fonts/#{$file_name}.woff') format('woff');
     font-weight: #{$weight};
     font-style: #{$style};
   }
 }
-//Percent
+
+// Процент
 @function percent($px, $from: 100) {
   $result: math.div($px, $from) * 100%;
-  @return $result;
-}
-//REM
-@function toRem($px, $current: 16) {
-  $result: math.div($px, $current) + rem;
-  @return $result;
-}
-//EM
-@function toEm($px, $current: 16) {
-  $result: math.div($px, $current) + em;
+
   @return $result;
 }
 
-//Currency
+// REM
+@function to-rem($px, $current: 16) {
+  $result: math.div($px, $current) + rem;
+
+  @return $result;
+}
+
+// EM
+@function to-em($px, $current: 16) {
+  $result: math.div($px, $current) + em;
+
+  @return $result;
+}
+
+// Валюта
 @mixin currency($sym) {
   &::after {
-    content: "#{$sym}";
-  }
-}
-
-// Трикутник
-@mixin triangle($direction, $color, $size, $size2: $size) {
-  @if $direction == left {
-    border: toRem($size2) solid transparent;
-    border-right: toRem($size) solid $color;
-  }
-  @if $direction == right {
-    border: toRem($size2) solid transparent;
-    border-left: toRem($size) solid $color;
-  }
-  @if $direction == top {
-    border: toRem($size2) solid transparent;
-    border-bottom: toRem($size) solid $color;
-  }
-  @if $direction == bottom {
-    border: toRem($size2) solid transparent;
-    border-top: toRem($size) solid $color;
-  }
-}
-
-// Grids//Подключение шрифта
-@mixin font($font_name, $file_name, $weight, $style) {
-  @font-face {
-    font-family: $font_name;
-    font-display: swap;
-    src: url("../fonts/#{$file_name}.woff2") format("woff2"),
-      url("../fonts/#{$file_name}.woff") format("woff");
-    font-weight: #{$weight};
-    font-style: #{$style};
-  }
-}
-//Процент
-@function percent($px, $from: 100) {
-  $result: math.div($px, $from) * 100%;
-  @return $result;
-}
-//REM
-@function toRem($px, $current: 16) {
-  $result: math.div($px, $current) + rem;
-  @return $result;
-}
-//EM
-@function toEm($px, $current: 16) {
-  $result: math.div($px, $current) + em;
-  @return $result;
-}
-
-//Валюта
-@mixin currency($sym) {
-  &::after {
-    content: "#{$sym}";
+    content: '#{$sym}';
   }
 }
 
 // Треугольник
 @mixin triangle($direction, $color, $size, $size2: $size) {
   @if $direction == left {
-    border: toRem($size2) solid transparent;
-    border-right: toRem($size) solid $color;
+    border: to-rem($size2) solid transparent;
+    border-right: to-rem($size) solid $color;
   }
+
   @if $direction == right {
-    border: toRem($size2) solid transparent;
-    border-left: toRem($size) solid $color;
+    border: to-rem($size2) solid transparent;
+    border-left: to-rem($size) solid $color;
   }
+
   @if $direction == top {
-    border: toRem($size2) solid transparent;
-    border-bottom: toRem($size) solid $color;
+    border: to-rem($size2) solid transparent;
+    border-bottom: to-rem($size) solid $color;
   }
+
   @if $direction == bottom {
-    border: toRem($size2) solid transparent;
-    border-top: toRem($size) solid $color;
+    border: to-rem($size2) solid transparent;
+    border-top: to-rem($size) solid $color;
   }
 }
 
 // Сетки
-@mixin gridCards($type: fit, $min: 280px, $max: 1fr, $gap: 30px) {
+@mixin grid-cards($type: fit, $min: 280px, $max: 1fr, $gap: 30px) {
   display: grid;
   gap: $gap;
   grid-template-columns: repeat(auto-#{$type}, minmax($min, $max));
 }
 
 // Адаптивное свойство (clamp)
-@mixin adaptiveValue(
+@mixin adaptive-value(
   $property,
-  $startSize,
-  $minSize,
-  $keepSize: 0,
-  $widthFrom: $containerWidth,
-  $widthTo: $minWidth
+  $start-size,
+  $min-size,
+  $keep-size: 0,
+  $width-from: $container-width,
+  $width-to: $min-width
 ) {
-  @if ($startSize==0) {
-    $startSize: 0.000001;
+  @if $start-size == 0 {
+    $start-size: 0.000001;
   }
-  @if ($minSize==0) {
-    $minSize: 0.000001;
+
+  @if $min-size == 0 {
+    $min-size: 0.000001;
   }
 
   // Для calc();
-  $addSize: math.div($startSize - $minSize, 16);
+  $add-size: math.div($start-size - $min-size, 16);
 
-  @if ($widthFrom == $containerWidth and $maxWidthContainer == 0) {
-    $widthFrom: $maxWidth;
+  @if $width-from == $container-width and $max-width-container == 0 {
+    $width-from: $max-width;
   }
 
   // Брейкпоинты в EM
-  $widthFromMedia: toEm($widthFrom);
-  $widthToMedia: toEm($widthTo);
+  $width-from-media: to-em($width-from);
+  $width-to-media: to-em($width-to);
 
   // Формула плавающего значения
   // Источник: https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
-  $slope: math.div(($startSize - $minSize), ($widthFrom - $widthTo));
-  $yIntersection: -$widthTo * $slope + $minSize;
-  @if ($yIntersection==0) {
-    $yIntersection: 0.000001;
+  $slope: math.div(($start-size - $min-size), ($width-from - $width-to));
+  $y-intersection: -$width-to * $slope + $min-size;
+
+  @if $y-intersection == 0 {
+    $y-intersection: 0.000001;
   }
-  $flyValue: #{toRem($yIntersection)}" + " #{$slope * 100}vw;
+
+  $fly-value: #{to-rem($y-intersection)}' + ' #{$slope * 100}vw;
 
   // Получение значения свойства
-  $propertyValue: #{"clamp(" toRem($minSize) "," $flyValue "," toRem($startSize)
-    ")"};
+  $property-value: #{'clamp(' to-rem($min-size) ',' $fly-value ','
+    to-rem($start-size) ')'};
+
   // Если отрицательные значения
-  @if ($minSize > $startSize) {
-    $propertyValue: #{"clamp("
-      toRem($startSize)
-      ","
-      $flyValue
-      ","
-      toRem($minSize)
-      ")"};
+  @if $min-size > $start-size {
+    $property-value: #{'clamp('
+      to-rem($start-size)
+      ','
+      $fly-value
+      ','
+      to-rem($min-size)
+      ')'};
   }
 
   // Устанавливаем значение по умолчанию
-  @if $keepSize != 1 and $keepSize != 3 {
-    @media (min-width: $widthFromMedia) {
-      #{$property}: toRem($startSize);
+  @if $keep-size != 1 and $keep-size != 3 {
+    @media (min-width: $width-from-media) {
+      #{$property}: to-rem($start-size);
     }
   }
+
   // Адаптируем размер в промежутке между указанными ширинами вьюпорта
-  @media (min-width: $widthToMedia) and (max-width: $widthFromMedia) {
-    #{$property}: $propertyValue;
+  @media (min-width: $width-to-media) and (max-width: $width-from-media) {
+    #{$property}: $property-value;
 
     // Если поддерживается clamp();
-    @supports (#{$property}: $propertyValue) {
-      #{$property}: $propertyValue;
+    @supports (#{$property}: $property-value) {
+      #{$property}: $property-value;
     }
+
     // Если не поддерживается clamp();
-    @supports not (#{$property}: $propertyValue) {
+    @supports not (#{$property}: $property-value) {
       #{$property}: calc(
-        #{toRem($minSize)} + #{$addSize} * (100vw - #{toRem($widthTo)}) / #{math.div(
-            $widthFrom,
+        #{to-rem($min-size)} + #{$add-size} * (100vw - #{to-rem($width-to)}) / #{math.div(
+            $width-from,
             16
-          ) - math.div($widthTo, 16)}
+          ) - math.div($width-to, 16)}
       );
     }
   }
-  @if $keepSize != 1 and $keepSize != 2 {
-    @media (max-width: $widthToMedia) {
-      #{$property}: toRem($minSize);
+
+  @if $keep-size != 1 and $keep-size != 2 {
+    @media (max-width: $width-to-media) {
+      #{$property}: to-rem($min-size);
     }
   }
 }
 
 // Grid-контейнер
-@mixin gridContainer(
+@mixin grid-container(
   $type: 0,
-  $container: $maxWidthContainer,
-  $paddingStart: math.div($containerPadding, 2),
-  $paddingEnd: math.div($containerPadding, 2)
+  $container: $max-width-container,
+  $padding-start: math.div($container-padding, 2),
+  $padding-end: math.div($container-padding, 2)
 ) {
   display: grid;
   min-width: 0;
   grid-template-columns:
-    toRem($paddingStart) 1fr minmax(auto, toRem($container))
-    1fr toRem($paddingEnd);
+    to-rem($padding-start) 1fr minmax(auto, to-rem($container))
+    1fr to-rem($padding-end);
+
   > * {
     min-width: 0;
-    @if $type==1 {
+
+    @if $type == 1 {
       grid-column: 1 / 6;
-    } @else if $type==2 {
+    } @else if $type == 2 {
       grid-column: 2 / 5;
-    } @else if $type==3 {
+    } @else if $type == 3 {
       grid-column: 3 / 6;
-    } @else if $type==4 {
+    } @else if $type == 4 {
       grid-column: 1 / 4;
-    } @else if $type==5 {
+    } @else if $type == 5 {
       grid-column: 2 / 4;
-    } @else if $type==6 {
-      grid-column: 3 / 5;
-    } @else {
-      grid-column: 3 / 4;
-    }
-  }
-}
-@mixin gridCards($type: fit, $min: 280px, $max: 1fr, $gap: 30px) {
-  display: grid;
-  gap: $gap;
-  grid-template-columns: repeat(auto-#{$type}, minmax($min, $max));
-}
-
-// Адаптивна властивість (clamp)
-@mixin adaptiveValue(
-  $property,
-  $startSize,
-  $minSize,
-  $keepSize: 0,
-  $widthFrom: $containerWidth,
-  $widthTo: $minWidth
-) {
-  @if ($startSize==0) {
-    $startSize: 0.000001;
-  }
-  @if ($minSize==0) {
-    $minSize: 0.000001;
-  }
-
-  // Для calc();
-  $addSize: math.div($startSize - $minSize, 16);
-
-  @if ($widthFrom == $containerWidth and $maxWidthContainer == 0) {
-    $widthFrom: $maxWidth;
-  }
-
-  // Брейк-поїнти в EM
-  $widthFromMedia: toEm($widthFrom);
-  $widthToMedia: toEm($widthTo);
-
-  // Формула плаваючого значення
-  // Источник: https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
-  $slope: math.div(($startSize - $minSize), ($widthFrom - $widthTo));
-  $yIntersection: -$widthTo * $slope + $minSize;
-  @if ($yIntersection==0) {
-    $yIntersection: 0.000001;
-  }
-  $flyValue: #{toRem($yIntersection)}" + " #{$slope * 100}vw;
-
-  // Отримання значення властивості
-  $propertyValue: #{"clamp(" toRem($minSize) "," $flyValue "," toRem($startSize)
-    ")"};
-  // Якщо негативні значення
-  @if ($minSize > $startSize) {
-    $propertyValue: #{"clamp("
-      toRem($startSize)
-      ","
-      $flyValue
-      ","
-      toRem($minSize)
-      ")"};
-  }
-
-  // Встановлюємо значення за замовчуванням
-  @if $keepSize != 1 and $keepSize != 3 {
-    @media (min-width: $widthFromMedia) {
-      #{$property}: toRem($startSize);
-    }
-  }
-  // Адаптуємо розмір у проміжку між зазначеними ширинами в'юпорту
-  @media (min-width: $widthToMedia) and (max-width: $widthFromMedia) {
-    #{$property}: $propertyValue;
-
-    //Якщо підтримується clamp();
-    @supports (#{$property}: $propertyValue) {
-      #{$property}: $propertyValue;
-    }
-    //Якщо не підтримується clamp();
-    @supports not (#{$property}: $propertyValue) {
-      #{$property}: calc(
-        #{toRem($minSize)} + #{$addSize} * (100vw - #{toRem($widthTo)}) / #{math.div(
-            $widthFrom,
-            16
-          ) - math.div($widthTo, 16)}
-      );
-    }
-  }
-  @if $keepSize != 1 and $keepSize != 2 {
-    @media (max-width: $widthToMedia) {
-      #{$property}: toRem($minSize);
-    }
-  }
-}
-
-// Grid-контейнер
-@mixin gridContainer(
-  $type: 0,
-  $container: $maxWidthContainer,
-  $paddingStart: math.div($containerPadding, 2),
-  $paddingEnd: math.div($containerPadding, 2)
-) {
-  display: grid;
-  min-width: 0;
-  grid-template-columns:
-    toRem($paddingStart) 1fr minmax(auto, toRem($container))
-    1fr toRem($paddingEnd);
-  > * {
-    min-width: 0;
-    @if $type==1 {
-      grid-column: 1 / 6;
-    } @else if $type==2 {
-      grid-column: 2 / 5;
-    } @else if $type==3 {
-      grid-column: 3 / 6;
-    } @else if $type==4 {
-      grid-column: 1 / 4;
-    } @else if $type==5 {
-      grid-column: 2 / 4;
-    } @else if $type==6 {
+    } @else if $type == 6 {
       grid-column: 3 / 5;
     } @else {
       grid-column: 3 / 4;

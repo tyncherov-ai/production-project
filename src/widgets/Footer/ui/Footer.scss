@@ -1,11 +1,12 @@
-@import "../../../shared/ui/mixins/mixins";
+@import '../../../shared/ui/mixins/mixins';
 
 .footer {
-  border-top: 1px solid rgba(127, 140, 141, 0.4);
-  border-radius: toRem(10) toRem(10) 0 0;
+  border-top: 1px solid #7f8c8d66;
+  border-radius: to-rem(10) to-rem(10) 0 0;
+
   // .footer__container
 
   &__container {
-    padding-block: toRem(20);
+    padding-block: to-rem(20);
   }
 }

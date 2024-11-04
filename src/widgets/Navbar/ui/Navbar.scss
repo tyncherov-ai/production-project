@@ -1,12 +1,12 @@
-@import "../../../shared/ui/mixins/mixins";
+@import '../../../shared/ui/mixins/mixins';
 
 .header {
   transition: background-color 0.3s ease 0s;
   background-color: var(--bg-primary);
-  border-bottom: 1px solid rgba(127, 140, 141, 0.4);
+  border-bottom: 1px solid #7f8c8d66;
 
   &__container {
-    padding-block: toRem(20);
+    padding-block: to-rem(20);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -18,7 +18,7 @@
   &__links {
     display: flex;
     align-items: center;
-    gap: toRem(20);
+    gap: to-rem(20);
     flex-grow: 1;
   }
 }

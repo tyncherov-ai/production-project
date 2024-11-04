@@ -1,25 +1,25 @@
 // Стилі меню + бургер
-@import "base/menu";
+@import 'base/menu';
 
 // Общий файл элементов форм
 // Для подключения/отключения стилей конкретного єлемента формы смотри base/forms/forms.scss
-//@import "base/forms/forms";
+// @import "base/forms/forms";
 
 // Стили спойлеров
 // @import "base/spollers";
 
 // Стили попапов
-//@import "base/popup";
-//@import "libs/hystmodal";
+// @import "base/popup";
+// @import "libs/hystmodal";
 
 // Стили Swiper
 // Базовые стили
-//@import "base/swiper";
+// @import "base/swiper";
 // Полный набор стилей из scss/libs/swiper.scss
 // @import "libs/swiper.scss";
 
 // Подключение cтилей Tippy
-//@import "libs/tippy";
+// @import "libs/tippy";
 
 // Стили табов
 // @import "base/tabs";
@@ -31,17 +31,17 @@
 // @import "base/showmore";
 
 // Cтили simplebar
-//@import '../../node_modules/simplebar/dist/simplebar.css';
+// @import '../../node_modules/simplebar/dist/simplebar.css';
 
 // Календарь
-//@import "libs/datepicker";
+// @import "libs/datepicker";
 
 // Стили для полноэкранного блока
-//@import "base/fullscreen";
+// @import "base/fullscreen";
 
 // Стили Lightgallery
 // Базовые стили
-//@import 'libs/gallery/lightgallery';
+// @import 'libs/gallery/lightgallery';
 // Стили дополнений
 // @import 'libs/gallery/lg-thumbnail';
 // @import 'libs/gallery/lg-video';
@@ -61,7 +61,7 @@
 // Стили для отзывчивых картинок (IBG)
 // Сниппет (HTML): ibg (div c картинкой и классами)
 // Сниппет (HTML): ibga (a c картинкой и классами)
-[class*="-ibg"] {
+[class*='-ibg'] {
   position: relative;
 
   img {
@@ -74,7 +74,7 @@
   }
 }
 
-[class*="-ibg_contain"] {
+[class*='-ibg_contain'] {
   img {
     object-fit: contain;
   }
@@ -85,14 +85,14 @@
 // Сниппет (SCSS): ex
 
 // Счетчик для списка
-%listCounter {
+%list-counter {
   list-style-type: none;
   counter-reset: item;
 
   li {
     position: relative;
 
-    &:before {
+    &::before {
       counter-increment: item;
       content: counter(item);
       position: absolute;
@@ -103,7 +103,7 @@
 }
 
 // Адаптивное видео
-%responsiveVideo {
+%responsive-video {
   position: relative;
   overflow: hidden;
   height: 0;
@@ -122,7 +122,7 @@
 }
 
 // Видео в качестве фона
-%videoBackground {
+%video-background {
   video,
   iframe,
   object,
@@ -172,8 +172,4 @@
   &::-webkit-scrollbar {
     display: none;
   }
-}
-
-%cuf {
-  font-family: CormorantUpright;
 }

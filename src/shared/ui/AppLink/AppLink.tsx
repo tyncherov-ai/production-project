@@ -25,7 +25,7 @@ export const AppLink: FC<AppLinkProps> = (props) => {
   return (
     <Link
       to={to}
-      className={classNames('AppLink', {}, [className, theme])}
+      className={classNames('app-link', {}, [className, theme])}
       {...otherProps}
     >
       {children}

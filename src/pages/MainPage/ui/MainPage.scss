@@ -1,9 +1,9 @@
-@import "../../../shared/ui/mixins/mixins";
+@import '../../../shared/ui/mixins/mixins';
 
 .main {
-  padding-top: toRem(30);
-  // .main__container
+  padding-top: to-rem(30);
 
+  // .main__container
   &__container {
   }
 }
