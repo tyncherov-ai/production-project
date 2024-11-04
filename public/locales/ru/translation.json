@@ -1,5 +1,7 @@
 {
   "Main": "Главная",
   "About": "О сайте",
-  "language": "English"
+  "language": "English",
+  "Return to Homepage": "Вернуться на Главную",
+  "Page Not Found": "К сожалению, страница, которую вы ищете, не существует."
 }

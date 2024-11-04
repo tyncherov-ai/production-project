@@ -1,5 +1,7 @@
 {
   "Main": "Main",
   "About": "About",
-  "language": "Русский"
+  "language": "Русский",
+  "Return to Homepage": "Return to Homepage",
+  "Page Not Found": "Sorry, the page you're looking for does not exist"
 }
