@@ -20,6 +20,7 @@ export default [
       'react/react-in-jsx-scope': 'off',
       'react/no-deprecated': 'warn',
       'no-unused-vars': 'warn',
+      '@typescript-eslint/no-unused-vars': 'warn',
       'react/jsx-closing-bracket-location': [1, 'tag-aligned'],
     },
   },

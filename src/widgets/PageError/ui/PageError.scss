@@ -1,0 +1,26 @@
+@import '../../../shared/ui/styles/mixins';
+
+.page-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  // .page-error__text
+
+  &__text {
+    font-size: to-rem(24);
+
+    &:not(:last-child) {
+      margin-bottom: to-rem(15);
+    }
+  }
+
+  // .page-error__button
+
+  &__button {
+    color: var(--text-accent);
+    font-size: to-rem(18);
+  }
+}

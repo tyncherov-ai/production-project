@@ -1,8 +1,30 @@
 {
-    "explorer.compactFolders": false,
-    "i18n-ally.localesPaths": [
-        "public/locales",
-        "src/shared/config/i18n"
-    ],
-    "i18n-ally.keystyle": "nested"
+  "explorer.compactFolders": false,
+  "i18n-ally.localesPaths": ["public/locales", "src/shared/config/i18n"],
+  "i18n-ally.keystyle": "nested",
+  "[scss]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint"
+  },
+  "stylelint.configFile": "",
+  "stylelint.validate": ["scss"],
+  "stylelint.snippet": [],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "stylelint.config": {
+    "extends": "stylelint-config-standard-scss",
+    "plugins": ["stylelint-prettier"],
+    "rules": {
+      "prettier/prettier": true,
+      "block-no-empty": null,
+      "number-max-precision": 6
+    }
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  }
 }
