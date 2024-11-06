@@ -4,46 +4,25 @@
  */
 
 import type { Config } from 'jest';
+import path from 'path';
 
 const config: Config = {
-  // All imported modules in your tests should be mocked automatically
-  // automock: false,
-
-  // Stop running tests after `n` failures
-  // bail: 0,
-
-  // The directory where Jest should store its cached dependency information
-  // cacheDirectory: "C:\\Users\\Vagiz.T\\AppData\\Local\\Temp\\jest",
-
-  // The root directory that Jest should scan for tests and modules within
-  rootDir: '../../',
-
-  // Automatically clear mock calls, instances, contexts and results before every test
   clearMocks: true,
-
-  // The test environment that will be used for testing
   testEnvironment: 'jsdom',
-
-  // An array of regexp pattern strings used to skip coverage collection
   coveragePathIgnorePatterns: ['\\\\node_modules\\\\'],
-
-  // An array of directory names to be searched recursively up from the requiring module's location
+  moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json', 'node'],
   moduleDirectories: ['node_modules'],
-
-  // An array of file extensions your modules use
-  moduleFileExtensions: [
-    'js',
-    'mjs',
-    'cjs',
-    'jsx',
-    'ts',
-    'tsx',
-    'json',
-    'node',
+  modulePaths: ['<rootDir>src'],
+  moduleNameMapper: {
+    '\\.(css|scss)$': 'identity-obj-proxy',
+    '\\.(svg)': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+  },
+  testMatch: [
+    // Обнаружил разницу между МАК ОС и ВИНДОУС!!!
+    '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
   ],
-
-  // The glob patterns Jest uses to detect test files
-  testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[tj]s?(x)'],
+  rootDir: '../../',
+  setupFilesAfterEnv: ['<rootDir>config/jest/setup-tests.ts'],
 
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,
@@ -154,7 +133,7 @@ const config: Config = {
   // testLocationInResults: false,
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
-  testPathIgnorePatterns: ['\\\\node_modules\\\\'],
+  // testPathIgnorePatterns: ['\\\\node_modules\\\\'],
 
   // The regexp pattern or array of patterns that Jest uses to detect test files
   // testRegex: [],
@@ -169,13 +148,13 @@ const config: Config = {
   // transform: undefined,
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
-  transformIgnorePatterns: ['\\\\node_modules\\\\', '\\.pnp\\.[^\\\\]+$'],
+  // transformIgnorePatterns: ['\\\\node_modules\\\\', '\\.pnp\\.[^\\\\]+$'],
 
   // An array of regexp pattern strings that are matched against all modules before the module loader will automatically return a mock for them
   // unmockedModulePathPatterns: undefined,
 
   // Indicates whether each individual test should be reported during the run
-  verbose: true,
+  // verbose: true,
 
   // An array of regexp patterns that are matched against all source file paths before re-running tests in watch mode
   // watchPathIgnorePatterns: [],

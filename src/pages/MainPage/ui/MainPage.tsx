@@ -8,7 +8,6 @@ const MainPage = () => {
     <div className="page__main main">
       <div className="main__container">
         <div> {t('Main')}</div>
-        <BugButton />
       </div>
     </div>
   );

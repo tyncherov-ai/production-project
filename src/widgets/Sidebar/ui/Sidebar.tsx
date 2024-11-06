@@ -15,9 +15,16 @@ export const Sidebar = ({ className }: SidebarProps) => {
     setCollapsed((prev) => !prev);
   };
   return (
-    <aside className={classNames('sidebar', { collapsed }, [className])}>
+    <aside
+      data-testid="sidebar"
+      className={classNames('sidebar', { collapsed }, [className])}
+    >
       <div className="sidebar__body">
-        <button className="sidebar__open-button icon-btn" onClick={onToggle}>
+        <button
+          data-testid="sidebar-btn"
+          className="sidebar__open-button icon-btn"
+          onClick={onToggle}
+        >
           <GoSidebarExpand />
         </button>
         <div className="sidebar__labels"></div>

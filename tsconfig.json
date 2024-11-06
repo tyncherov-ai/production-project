@@ -1,28 +1,27 @@
 {
-    "compilerOptions": {
-        "outDir": "./dist/",
-        "noImplicitAny": true,
-        "module": "ESNext",
-        // В какую спецификацию компилирует: для поддержки браузеров
-        "target": "es5",
-        "jsx": "react-jsx",
-        // Компилятор будет обрабатывать не только TS файлы, но и JS файлы
-        "allowJs": true,
-        "moduleResolution": "node",
-        // esModuleInterop позволяет работать с пакетами, которые используют common js(require() module.export) с помощью import
-        "esModuleInterop": true,
-        // allowSyntheticDefaultImports позволяет писать import без *
-        "allowSyntheticDefaultImports": true,
-        "baseUrl": ".",
-        "paths": {
-            "*": [
-                "./src/*"
-            ]
-        }
-    },
-    "ts-node": {
-        "compilerOptions": {
-            "module": "CommonJS"
-        }
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "noImplicitAny": true,
+    "module": "ESNext",
+    // В какую спецификацию компилирует: для поддержки браузеров
+    "target": "es5",
+    "jsx": "react-jsx",
+    // Компилятор будет обрабатывать не только TS файлы, но и JS файлы
+    "allowJs": true,
+    "moduleResolution": "node",
+    // esModuleInterop позволяет работать с пакетами, которые используют common js(require() module.export) с помощью import
+    "esModuleInterop": true,
+    // allowSyntheticDefaultImports позволяет писать import без *
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "types": ["@testing-library/jest-dom"],
+    "paths": {
+      "*": ["./src/*"]
     }
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
 }
