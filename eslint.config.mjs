@@ -3,6 +3,7 @@ import pluginJs from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import pluginReact from 'eslint-plugin-react';
 import eslintPluginPrettier from 'eslint-plugin-prettier/recommended';
+import i18next from 'eslint-plugin-i18next';
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -13,6 +14,7 @@ export default [
   ...tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
   eslintPluginPrettier,
+  i18next.configs['flat/recommended'],
   {
     rules: {
       quotes: ['error', 'single'],
