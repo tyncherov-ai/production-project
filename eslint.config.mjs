@@ -20,7 +20,7 @@ export default [
       quotes: ['error', 'single'],
       semi: ['error', 'always'],
       'react/react-in-jsx-scope': 'off',
-      'no-unused-vars': 'warn',
+      'no-unused-vars': 'off',
       '@typescript-eslint/no-unused-vars': 'warn',
       'react/jsx-closing-bracket-location': [1, 'tag-aligned'],
     },

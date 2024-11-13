@@ -1,6 +1,5 @@
 import { useTranslation } from 'react-i18next';
 import './MainPage.scss';
-import { BugButton } from 'app/providers/ErrorBoundary';
 
 const MainPage = () => {
   const { t } = useTranslation();

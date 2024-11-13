@@ -11,7 +11,7 @@ export function buildWebpackConfig(
   const { paths, mode, isDev } = options;
   return {
     mode,
-    entry: paths.enrty,
+    entry: paths.entry,
     module: {
       rules: buildLoaders(options),
     },

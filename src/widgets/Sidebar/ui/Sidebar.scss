@@ -2,8 +2,8 @@
 
 .sidebar {
   transition: all 0.3s ease 0s;
-  min-height: 100%;
   width: to-rem(250);
+  height: 100%;
   background-color: var(--bg-secondary);
   border-radius: 0 to-rem(10) to-rem(10) 0;
 
@@ -14,9 +14,9 @@
   // .sidebar__body
 
   &__body {
+    height: 100%;
     display: flex;
     flex-direction: column;
-    height: 100%;
     padding: to-rem(15);
     align-items: start;
   }

@@ -1,3 +1,7 @@
 .lang-switcher {
   margin-left: auto;
+
+  &.red {
+    color: red;
+  }
 }
