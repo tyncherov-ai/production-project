@@ -4,7 +4,7 @@
   width: to-rem(50);
   aspect-ratio: 1;
   display: grid;
-  border: 4px solid;
+  border: to-rem(4) solid;
   border-radius: 50%;
   border-color: var(--primary) #0000;
   animation: l16 1s infinite linear;
@@ -13,7 +13,7 @@
   &::after {
     content: '';
     grid-area: 1/1;
-    margin: 2px;
+    margin: to-rem(2);
     border: inherit;
     border-radius: 50%;
   }
@@ -26,7 +26,7 @@
   }
 
   &::after {
-    margin: 8px;
+    margin: to-rem(8);
   }
 }
 

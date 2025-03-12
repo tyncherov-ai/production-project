@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { I18nextProvider } from 'react-i18next';
 import i18n from 'i18next';
-import LangSwitcher from 'shared/ui/LangSwitcher/ui/LangSwitcher';
+import LangSwitcher from './LangSwitcher';
 
 // Initialize i18n for testing
 i18n.init({

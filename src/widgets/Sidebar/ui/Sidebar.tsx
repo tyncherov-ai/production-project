@@ -14,6 +14,7 @@ const Sidebar = ({ className }: SidebarProps) => {
   const onToggle = () => {
     setCollapsed((prev) => !prev);
   };
+
   return (
     <aside
       data-testid="sidebar"
