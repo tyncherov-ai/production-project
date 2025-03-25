@@ -63,6 +63,12 @@ jobs:
       - name: Unit testing
         run: npm run test:unit
 
+      - name: storybook building
+        run: npm run storybook:build
+
+      - name: screenshot testing
+        run: npm run test:ui:ci
+
   build:
     runs-on: ubuntu-latest
     needs: [lint, test]
