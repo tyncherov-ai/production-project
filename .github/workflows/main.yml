@@ -9,6 +9,8 @@ on:
 jobs:
   install-dependencies:
     runs-on: ubuntu-latest
+    outputs:
+      cache-hit: ${{ steps.cache-deps.outputs.cache-hit }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -20,7 +22,15 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
+        id: cache-deps
         run: npm ci
+
+      - name: Upload node_modules
+        uses: actions/upload-artifact@v3
+        with:
+          name: node_modules
+          path: node_modules
+          retention-days: 1
 
   lint:
     runs-on: ubuntu-latest
@@ -29,14 +39,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Download node_modules
+        uses: actions/download-artifact@v3
+        with:
+          name: node_modules
+          path: node_modules
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci
 
       - name: Linting TypeScript
         run: npm run lint:ts
@@ -51,14 +63,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Download node_modules
+        uses: actions/download-artifact@v3
+        with:
+          name: node_modules
+          path: node_modules
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci
 
       - name: Unit testing
         run: npm run test:unit
@@ -76,14 +90,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Download node_modules
+        uses: actions/download-artifact@v3
+        with:
+          name: node_modules
+          path: node_modules
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci
 
       - name: Build
         run: npm run build:prod
