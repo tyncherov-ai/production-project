@@ -14,9 +14,9 @@
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "storybook": "storybook dev -p 6006 -c ./config/.storybook",
     "storybook:build": "storybook build -c ./config/.storybook",
-    "test:ui": "npx loki --chromeConcurrency 1 test",
-    "test:ui:ok": "npx loki approve",
-    "test:ui:ci": "loki --requireReference --reactUri file:./storybook-static"
+    "loki:test": "npx loki --chromeConcurrency 1 test",
+    "loki:test:ok": "npx loki approve",
+    "loki:test:ci": "npx loki --requireReference --reactUri file:./storybook-static"
   },
   "keywords": [],
   "author": "",
