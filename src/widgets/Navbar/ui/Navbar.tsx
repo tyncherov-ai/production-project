@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import './Navbar.scss';
-import { useTranslation } from 'react-i18next';
+//import { useTranslation } from 'react-i18next';
 import { LangSwitcher } from 'shared/ui/LangSwitcher';
 
 interface NavbarProps {
@@ -8,7 +8,7 @@ interface NavbarProps {
 }
 
 const Navbar = ({ className }: NavbarProps) => {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
 
   return (
     <header className={classNames('header', {}, [className])}>

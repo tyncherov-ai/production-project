@@ -22,14 +22,18 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+        if: always()
       - name: Linting TypeScript
         run: npm run lint:ts
 
+        if: always()
       - name: Linting SCSS
         run: npm run lint:scss
 
+        if: always()
       - name: Unit testing
         run: npm run test:unit
 
+        if: always()
       - name: Build
         run: npm run build:prod

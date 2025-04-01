@@ -1,3 +1,4 @@
+import { defineConfig } from 'eslint/config';
 import globals from 'globals';
 import pluginJs from '@eslint/js';
 import tseslint from 'typescript-eslint';
@@ -5,10 +6,9 @@ import pluginReact from 'eslint-plugin-react';
 import eslintPluginPrettier from 'eslint-plugin-prettier/recommended';
 import i18next from 'eslint-plugin-i18next';
 
-/** @type {import('eslint').Linter.Config[]} */
-export default [
+export default defineConfig([
   { files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'] },
-  { ignores: ['node_modules/', 'build/'] },
+  { ignores: ['node_modules/', 'build/', 'storybook-static/'] },
   { languageOptions: { globals: { ...globals.browser, ...globals.jest } } },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
@@ -16,6 +16,11 @@ export default [
   eslintPluginPrettier,
   i18next.configs['flat/recommended'],
   {
+    settings: {
+      react: {
+        version: 'detect',
+      },
+    },
     rules: {
       quotes: ['error', 'single'],
       semi: ['error', 'always'],
@@ -25,4 +30,4 @@ export default [
       'react/jsx-closing-bracket-location': [1, 'tag-aligned'],
     },
   },
-];
+]);

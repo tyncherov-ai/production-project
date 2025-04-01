@@ -25,11 +25,12 @@
 
   &__items {
     margin-top: to-rem(20);
-    padding-top: to-rem(20);
+    padding-top: to-rem(17);
     flex: 1 1 auto;
     display: flex;
     flex-direction: column;
     gap: to-rem(12);
+    width: 100%;
   }
 
   // .sidebar__item
@@ -38,8 +39,10 @@
     display: flex;
     align-items: center;
     gap: to-rem(12);
+    padding: to-rem(3);
 
     svg {
+      flex: 0 0 to-rem(24);
       width: to-rem(24);
       height: to-rem(24);
       overflow: hidden;

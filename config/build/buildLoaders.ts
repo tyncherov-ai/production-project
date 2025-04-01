@@ -20,11 +20,12 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
   const cssLoader = buildCssLoader(isDev);
 
   // Если не изспользуем typescript - нужен babel-loader
+  /*
   const typescriptLoader = {
     test: /\.tsx?$/,
     use: 'ts-loader',
     exclude: /node_modules/,
-  };
+  };*/
 
   const babelLoader = {
     test: /\.(js|jsx|ts|tsx)$/,
