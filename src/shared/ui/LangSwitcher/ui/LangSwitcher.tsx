@@ -6,7 +6,7 @@ interface LangSwitcherProps {
   className?: string;
 }
 
-const LangSwitcher = ({ className }: LangSwitcherProps) => {
+export const LangSwitcher = ({ className }: LangSwitcherProps) => {
   const { t, i18n } = useTranslation();
 
   const langToggle = () => {
@@ -22,5 +22,3 @@ const LangSwitcher = ({ className }: LangSwitcherProps) => {
     </button>
   );
 };
-
-export default LangSwitcher;

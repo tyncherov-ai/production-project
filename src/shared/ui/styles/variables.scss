@@ -15,7 +15,7 @@ $max-width-container: 0;
 
 // Общий отступ у контейнера
 // (30 = по 15px слева и справа, 0 = нет отступа)
-$container-padding: 20;
+$container-padding: 30;
 
 // Ширина срабатывания первого брейкпоинта
 $container-width: $max-width-container + $container-padding;
@@ -37,3 +37,9 @@ $mobile-small: to-em(479.98);
 // 1 = отзывчивость (у контейнера нет брейкпоинтов),
 // 2 = по брейкпоинтам (контейнер изменяет свою ширину по брейкпоинтам)
 $responsive-type: 1;
+
+// Z indexs
+:root {
+  --modal-z-index: 150;
+  --modal-overlay-z-index: 149;
+}

@@ -3,6 +3,7 @@ import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator
 import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator';
 import { RouteDecorator } from '../../src/shared/config/storybook/RouteDecorator';
 import { Theme } from '../../src/app/providers/ThemeProvider';
+import '../../src/app/styles/index.scss';
 
 const preview: Preview = {
   parameters: {

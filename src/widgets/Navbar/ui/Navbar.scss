@@ -9,16 +9,15 @@
     padding-block: to-rem(20);
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
   }
 
   &__button {
   }
 
-  &__links {
+  &__items {
     display: flex;
     align-items: center;
     gap: to-rem(20);
-    flex-grow: 1;
   }
 }

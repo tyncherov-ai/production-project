@@ -4,6 +4,7 @@ import pluginJs from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import pluginReact from 'eslint-plugin-react';
 import eslintPluginPrettier from 'eslint-plugin-prettier/recommended';
+import reactHooks from 'eslint-plugin-react-hooks';
 import i18next from 'eslint-plugin-i18next';
 
 export default defineConfig([
@@ -15,6 +16,7 @@ export default defineConfig([
   pluginReact.configs.flat.recommended,
   eslintPluginPrettier,
   i18next.configs['flat/recommended'],
+  reactHooks.configs['recommended-latest'],
   {
     settings: {
       react: {
@@ -28,6 +30,8 @@ export default defineConfig([
       'no-unused-vars': 'off',
       '@typescript-eslint/no-unused-vars': 'warn',
       'react/jsx-closing-bracket-location': [1, 'tag-aligned'],
+      'react-hooks/rules-of-hooks': 'error',
+      'react-hooks/exhaustive-deps': 'error',
     },
   },
 ]);

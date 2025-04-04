@@ -49,6 +49,7 @@
     }
 
     p {
+      white-space: nowrap;
       padding-top: to-rem(4);
       transition:
         transform 0.3s,
