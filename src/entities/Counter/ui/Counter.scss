@@ -1,0 +1,8 @@
+@import '../../../shared/ui/styles/mixins';
+
+.counter {
+  padding: to-rem(20);
+  display: flex;
+  align-items: center;
+  gap: to-rem(18);
+}
