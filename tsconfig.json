@@ -4,7 +4,8 @@
     "noImplicitAny": true,
     "module": "ESNext",
     // В какую спецификацию компилирует: для поддержки браузеров
-    "target": "es5",
+    "target": "es2018",
+    "lib": ["es2018", "dom"],
     "jsx": "react-jsx",
     // Компилятор будет обрабатывать не только TS файлы, но и JS файлы
     "allowJs": true,
@@ -23,5 +24,6 @@
     "compilerOptions": {
       "module": "CommonJS"
     }
-  }
+  },
+  "include": ["./config/jest/setup-tests.ts", "./src/**/*.ts", "./src/**/*.tsx"]
 }
