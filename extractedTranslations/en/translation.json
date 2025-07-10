@@ -1,11 +1,16 @@
 {
   "About": "About",
+  "Log in": "Log in",
   "Login": "Login",
   "Main": "Main",
   "Page Not Found": "Page Not Found",
+  "Password": "Password",
   "Reload page": "Reload page",
   "Return to Homepage": "Return to Homepage",
   "Something went wrong": "Something went wrong",
+  "Username": "Username",
   "language": "language",
-  "title": "title"
+  "title": "title",
+  "Введите имя пользователя": "Введите имя пользователя",
+  "Введите пароль": "Введите пароль"
 }

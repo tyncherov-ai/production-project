@@ -29,5 +29,6 @@
   },
   "[snippets]": {
     "editor.defaultFormatter": "vscode.json-language-features"
-  }
+  },
+  "ecsstractor_port.attributes": "class"
 }

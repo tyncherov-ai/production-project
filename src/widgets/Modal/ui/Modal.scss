@@ -1,4 +1,4 @@
-@import '../../../shared/ui/styles/mixins';
+@import '~@styles/base/mixins';
 
 .modal {
   position: fixed;
@@ -28,7 +28,7 @@
     visibility: hidden;
     transform: scale(0);
     transition: all 0.3s ease 0s;
-    background-color: var(--bg-accent);
+    background-color: var(--bg-primary);
     padding: to-rem(20);
     width: 100%;
     max-width: to-rem(900);

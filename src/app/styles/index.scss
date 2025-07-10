@@ -1,13 +1,13 @@
 @use 'sass:math';
 
 // Подключение миксинов
-@import '../../shared/ui/styles/mixins';
+@import 'base/mixins';
 
 // Подключение шрифтов
 @import 'https://fonts.googleapis.com/css?family=Montserrat:regular,500,600,700&display=swap&subset';
 
 // Переменные
-@import '../../shared/ui/styles/variables';
+@import 'base/variables';
 
 // Палитра цветов
 @import 'base/colors-palette';

@@ -1,0 +1,9 @@
+@import '~@styles/base/mixins';
+
+.input {
+  border-radius: to-rem(10);
+  padding: to-rem(10) to-rem(14);
+  overflow: hidden;
+  color: var(--text-primary);
+  background-color: var(--bg-secondary);
+}
