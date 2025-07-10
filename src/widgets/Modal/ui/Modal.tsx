@@ -2,7 +2,6 @@ import { ReactNode, useCallback, useEffect, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import './Modal.scss';
 import { Portal } from 'shared/ui/Portal';
-import { use } from 'i18next';
 
 interface ModalProps {
   className?: string;

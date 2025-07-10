@@ -17,6 +17,7 @@ const config: Config = {
   moduleDirectories: ['node_modules'],
   modulePaths: ['<rootDir>src'],
   moduleNameMapper: {
+    '^(entities|shared|features|widgets|app)/(.*)$': '<rootDir>/src/$1/$2',
     '\\.(css|scss)$': 'identity-obj-proxy',
     '\\.(svg)': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
   },
