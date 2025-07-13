@@ -28,6 +28,17 @@ const config: StorybookConfig = {
     config?.resolve?.modules?.push(path.resolve(__dirname, '../../src'));
     config?.resolve?.extensions?.push('.ts', '.tsx');
     config?.module?.rules?.push(buildCssLoader(true));
+    if (config.resolve) {
+      config.resolve.alias = {
+        ...(config.resolve.alias || {}),
+        '@styles': path.resolve(__dirname, '../../src/app/styles'),
+        entities: path.resolve(__dirname, '../../src/entities'),
+        shared: path.resolve(__dirname, '../../src/shared'),
+        features: path.resolve(__dirname, '../../src/features'),
+        widgets: path.resolve(__dirname, '../../src/widgets'),
+        app: path.resolve(__dirname, '../../src/app'),
+      };
+    }
     return config;
   },
 };

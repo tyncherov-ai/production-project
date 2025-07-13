@@ -4,7 +4,7 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 
 const meta: Meta<typeof AboutPage> = {
-  title: 'widgets/AboutPage',
+  title: 'pages/AboutPage',
   component: AboutPage,
   argTypes: {
     className: { control: 'text' },
