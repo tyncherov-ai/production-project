@@ -9,6 +9,8 @@ import path from 'path';
 const config: Config = {
   globals: {
     __IS_DEV__: true,
+    TextEncoder: TextEncoder,
+    TextDecoder: TextDecoder,
   },
   clearMocks: true,
   testEnvironment: 'jsdom',
@@ -119,7 +121,7 @@ const config: Config = {
   // runner: "jest-runner",
 
   // The paths to modules that run some code to configure or set up the testing environment before each test
-  // setupFiles: [],
+  setupFiles: ['<rootDir>config/jest/setupFiles.ts'],
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
   // setupFilesAfterEnv: [],
