@@ -1,6 +1,7 @@
 @import '~@styles/base/mixins';
 
 .input {
+  transition: all 0.3s ease 0s;
   border-radius: to-rem(10);
   padding: to-rem(10) to-rem(14);
   overflow: hidden;

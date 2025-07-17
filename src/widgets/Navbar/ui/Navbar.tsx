@@ -4,6 +4,9 @@ import { useTranslation } from 'react-i18next';
 import { LangSwitcher } from 'shared/ui/LangSwitcher';
 import { useCallback, useState } from 'react';
 import { LoginModal } from 'features/AuthByUsername';
+import { useSelector } from 'react-redux';
+import { getUserAuthData } from 'entities/User';
+import { LogoutModal } from 'features/AuthByUsername/ui/LogoutModal/LogoutModal';
 
 interface NavbarProps {
   className?: string;
@@ -12,6 +15,7 @@ interface NavbarProps {
 const Navbar = ({ className }: NavbarProps) => {
   const { t } = useTranslation();
   const [isAuthModal, setIsAuthModal] = useState(false);
+  const authData = useSelector(getUserAuthData);
 
   const onCloseModal = useCallback(() => {
     setIsAuthModal(false);
@@ -21,12 +25,26 @@ const Navbar = ({ className }: NavbarProps) => {
     setIsAuthModal(true);
   }, []);
 
-  return (
+  const authNavbar = (
     <header className={classNames('header', {}, [className])}>
       <div className="header__container">
         <div className="header__items">
           <button onClick={onShowModal} className="header__button login-btn">
-            {t('Login')}
+            {t('Log out')}
+          </button>
+          <LangSwitcher />
+        </div>
+        <LogoutModal isOpen={isAuthModal} onClose={onCloseModal} />
+      </div>
+    </header>
+  );
+
+  const guestNavbar = (
+    <header className={classNames('header', {}, [className])}>
+      <div className="header__container">
+        <div className="header__items">
+          <button onClick={onShowModal} className="header__button login-btn">
+            {t('Log in')}
           </button>
           <LangSwitcher />
         </div>
@@ -34,6 +52,8 @@ const Navbar = ({ className }: NavbarProps) => {
       </div>
     </header>
   );
+
+  return authData ? authNavbar : guestNavbar;
 };
 
 export default Navbar;

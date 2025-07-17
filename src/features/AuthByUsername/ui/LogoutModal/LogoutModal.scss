@@ -1,0 +1,39 @@
+@import '~@styles/base/mixins';
+
+.logout-modal {
+  > div > div {
+    max-width: to-rem(500);
+  }
+
+  // .logout-modal__body
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  // .logout-modal__title
+
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: to-rem(32);
+    }
+  }
+
+  // .logout-modal__buttons
+
+  &__buttons {
+    display: flex;
+    gap: to-rem(12);
+    align-self: flex-end;
+  }
+
+  // .logout-modal__button
+
+  &__button {
+    min-width: to-rem(100);
+  }
+}
+
+.cancel {
+}

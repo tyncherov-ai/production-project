@@ -8,5 +8,10 @@
   "Reload page": "Reload page",
   "Log in": "Log in",
   "Password": "Password",
-  "Username": "Username"
+  "Username": "Username",
+  "Incorrect username or password": "Incorrect username or password",
+  "Log out": "Log out",
+  "Confirm": "Confirm",
+  "Cancel": "Cancel",
+  "Are you sure you want to log out": "Are you sure you want to log out?"
 }

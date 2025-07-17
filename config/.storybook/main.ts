@@ -1,6 +1,7 @@
 import type { StorybookConfig } from '@storybook/react-webpack5';
 import path from 'path';
 import { buildCssLoader } from '../build/loaders/buildCssLoader';
+import { DefinePlugin } from 'webpack';
 
 const config: StorybookConfig = {
   stories: ['../../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
@@ -39,6 +40,11 @@ const config: StorybookConfig = {
         app: path.resolve(__dirname, '../../src/app'),
       };
     }
+    config.plugins?.push(
+      new DefinePlugin({
+        __IS_DEV__: true,
+      }),
+    );
     return config;
   },
 };

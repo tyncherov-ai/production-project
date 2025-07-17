@@ -1,6 +1,12 @@
 {
   "About": "About",
+  "Are you sure you want to log out": "Are you sure you want to log out",
+  "Are you sure you want to log out?": "Are you sure you want to log out?",
+  "Cancel": "Cancel",
+  "Confirm": "Confirm",
+  "Incorrect username or password": "Incorrect username or password",
   "Log in": "Log in",
+  "Log out": "Log out",
   "Login": "Login",
   "Main": "Main",
   "Page Not Found": "Page Not Found",
@@ -10,7 +16,9 @@
   "Something went wrong": "Something went wrong",
   "Username": "Username",
   "language": "language",
+  "sure want to log out?": "sure want to log out?",
   "title": "title",
   "Введите имя пользователя": "Введите имя пользователя",
-  "Введите пароль": "Введите пароль"
+  "Введите пароль": "Введите пароль",
+  "Не правильное имя пользователя или пароль": "Не правильное имя пользователя или пароль"
 }

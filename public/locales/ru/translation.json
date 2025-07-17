@@ -8,5 +8,10 @@
   "Reload page": "Перезагрузить страницу\n",
   "Log in": "Войти",
   "Password": "Пароль",
-  "Username": "Имя пользователя"
+  "Username": "Имя пользователя",
+  "Incorrect username or password": "Неверное имя пользователя или пароль",
+  "Log out": "Выйти",
+  "Confirm": "Подтвердить",
+  "Cancel": "Отменить",
+  "Are you sure you want to log out": "Вы уверены, что хотите выйти?"
 }
