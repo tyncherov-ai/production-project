@@ -61,7 +61,9 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
         value={password}
         onChange={(e) => onChangePassword(e.target.value)}
       />
-      <div className="login-form__error">{error}</div>
+      <div className="login-form__error">
+        {t('Incorrect username or password')}
+      </div>
       <Button
         className="login-form__button"
         onClick={onLoginClick}
