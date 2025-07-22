@@ -20,21 +20,29 @@ export const Default: Story = {
   args: {
     className: '',
   },
-  decorators: [
-    StoreDecorator({
-      loginForm: { username: '123', password: 'asdf', isLoading: false },
-    }),
-  ],
+  decorators: [StoreDecorator({})],
 };
 
 export const Dark: Story = {
   args: {
     className: '',
   },
+  decorators: [ThemeDecorator(Theme.DARK), StoreDecorator({})],
+};
+
+export const AuthNavbar: Story = {
+  args: {
+    className: '',
+  },
   decorators: [
     ThemeDecorator(Theme.DARK),
     StoreDecorator({
-      loginForm: { username: '123', password: 'asdf', isLoading: false },
+      user: {
+        authData: {
+          id: '1',
+          username: 'admin',
+        },
+      },
     }),
   ],
 };
