@@ -58,13 +58,13 @@ const Modal = (props: ModalProps) => {
     <div className={classNames('modal', mods, [className])}>
       <div className="modal__overlay" onClick={handleClose}>
         <div className="modal__content" onClick={onContentClick}>
-          {children}
+          {lazy && !isMounted ? null : children}
         </div>
       </div>
     </div>
   );
 
-  if (lazy && !isMounted) return null;
+  //if (lazy && !isMounted) return null;
 
   return portal ? <Portal>{modal}</Portal> : modal;
 };

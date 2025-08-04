@@ -48,9 +48,7 @@ const Navbar = ({ className }: NavbarProps) => {
           </button>
           <LangSwitcher />
         </div>
-        {isAuthModal && (
-          <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
-        )}
+        <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
       </div>
     </header>
   );
