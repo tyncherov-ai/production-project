@@ -4,6 +4,7 @@
   padding-block: to-rem(18);
   display: flex;
   flex-direction: column;
+  flex: 1 1 auto;
 
   &__title {
     font-size: to-rem(24);
