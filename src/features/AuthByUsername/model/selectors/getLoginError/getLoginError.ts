@@ -1,4 +1,4 @@
 import { StateSchema } from 'app/providers/StoreProvider';
 
 export const getLoginError = (state: StateSchema) =>
-  state?.loginForm?.error || '';
+  state?.loginForm?.error || undefined;

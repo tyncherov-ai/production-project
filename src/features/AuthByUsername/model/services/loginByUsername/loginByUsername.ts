@@ -33,7 +33,8 @@ export const loginByUsername = createAsyncThunk<
 
       return response.data;
     } catch (e) {
-      return rejectWithValue(e);
+      console.error('Login failed:', e);
+      return rejectWithValue('Error during login');
     }
   },
 );
