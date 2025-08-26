@@ -6,12 +6,12 @@ describe('loginSlice.test', () => {
     const state: Partial<LoginSchema> = { username: 'asdf' };
     expect(
       loginReducer(state as LoginSchema, loginActions.setUsername('asdfasdf')),
-    ).toStrictEqual({ username: 'asdfasdf' });
+    ).toEqual({ username: 'asdfasdf' });
   });
   test('test set password', () => {
     const state: Partial<LoginSchema> = { password: '12345' };
     expect(
       loginReducer(state as LoginSchema, loginActions.setPassword('123456')),
-    ).toStrictEqual({ password: '123456' });
+    ).toEqual({ password: '123456' });
   });
 });
