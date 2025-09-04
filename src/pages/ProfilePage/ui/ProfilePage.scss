@@ -1,0 +1,9 @@
+@import '~@styles/base/mixins';
+
+.profile {
+  padding-top: to-rem(30);
+
+  // .profile__container
+  &__container {
+  }
+}

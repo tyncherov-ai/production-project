@@ -2,14 +2,14 @@
   "compilerOptions": {
     "outDir": "./dist/",
     "noImplicitAny": true,
-    "module": "ESNext",
+    "module": "esnext",
     // В какую спецификацию компилирует: для поддержки браузеров
     "target": "es2018",
     "lib": ["es2018", "dom"],
     "jsx": "react-jsx",
     // Компилятор будет обрабатывать не только TS файлы, но и JS файлы
     "allowJs": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     // esModuleInterop позволяет работать с пакетами, которые используют common js(require() module.export) с помощью import
     "esModuleInterop": true,
     // allowSyntheticDefaultImports позволяет писать import без *

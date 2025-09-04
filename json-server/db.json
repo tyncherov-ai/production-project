@@ -21,11 +21,18 @@
     "users": [
         {
             "id": "1",
-            "username": "admin",
-            "password": "12345"
+            "username": "tigrarub",
+            "password": "qwerpoiuty"
         }
     ],
     "profile": {
-        "name": "typicode"
+        "firstname": "Tigra",
+        "lastname": "Rubie",
+        "age": 19,
+        "currency": "UZS",
+        "country": "Uzbekistan",
+        "city": "Tashkent",
+        "username": "tigrarub",
+        "avatar": ""
     }
 }

@@ -10,6 +10,7 @@
   &__body {
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
 
   // .logout-modal__title
@@ -25,7 +26,6 @@
   &__buttons {
     display: flex;
     gap: to-rem(12);
-    align-self: flex-end;
   }
 
   // .logout-modal__button

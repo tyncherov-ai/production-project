@@ -1,22 +1,27 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import './Sidebar.scss';
-import { GoSidebarExpand, GoHome, GoPeople } from 'react-icons/go';
-import { useState } from 'react';
+import { GoSidebarExpand } from 'react-icons/go';
+import { memo, useMemo, useState } from 'react';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink';
-import { useTranslation } from 'react-i18next';
+import { SidebarItemsList } from 'widgets/Sidebar/model/items';
+import { SidebarItem } from '../SidebarItem/SidebarItem';
 
 interface SidebarProps {
   className?: string;
 }
 
-const Sidebar = ({ className }: SidebarProps) => {
-  const { t } = useTranslation();
+const Sidebar = memo(({ className }: SidebarProps) => {
   const [collapsed, setCollapsed] = useState(true);
 
   const onToggle = () => {
     setCollapsed((prev) => !prev);
   };
+
+  const itemsList = useMemo(() => {
+    return SidebarItemsList.map((item) => (
+      <SidebarItem key={item.path} item={item} className="sidebar__item" />
+    ));
+  }, []);
 
   return (
     <aside
@@ -31,28 +36,13 @@ const Sidebar = ({ className }: SidebarProps) => {
         >
           <GoSidebarExpand />
         </button>
-        <div className="sidebar__items">
-          <AppLink
-            className="sidebar__item"
-            theme={AppLinkTheme.PRIMARY}
-            to={'/'}
-          >
-            <GoHome />
-            <p>{t('Main')}</p>
-          </AppLink>
-          <AppLink
-            className="sidebar__item"
-            theme={AppLinkTheme.PRIMARY}
-            to={'/about'}
-          >
-            <GoPeople />
-            <p>{t('About')}</p>
-          </AppLink>
-        </div>
+        <div className="sidebar__items">{itemsList}</div>
         <ThemeSwitcher className="sidebar__theme-button icon-btn" />
       </div>
     </aside>
   );
-};
+});
+
+Sidebar.displayName = 'Sidebar';
 
 export default Sidebar;

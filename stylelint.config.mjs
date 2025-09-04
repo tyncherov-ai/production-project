@@ -1,0 +1,11 @@
+/** @type {import('stylelint').Config} */
+export default {
+  extends: ['stylelint-config-standard-scss'],
+  plugins: ['stylelint-prettier'],
+  rules: {
+    'prettier/prettier': true,
+    'block-no-empty': null,
+    'number-max-precision': 6,
+    'no-empty-source': null,
+  },
+};

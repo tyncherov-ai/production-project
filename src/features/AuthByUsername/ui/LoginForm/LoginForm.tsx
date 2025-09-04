@@ -2,32 +2,33 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import './LoginForm.scss';
 import { useTranslation } from 'react-i18next';
 import { Input } from 'shared/ui/Input/ui/Input';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { memo, useCallback } from 'react';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
 import { Button } from 'shared/ui/Button/ui/Button';
-import { AppDispatch } from 'app/providers/StoreProvider';
 import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
 import {
   DynamicModuleLoader,
-  ReducerList,
+  ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 
 export interface LoginFormProps {
   className?: string;
+  onSuccess?: () => void;
 }
 
-const initialReducers: ReducerList = {
+const initialReducers: ReducersList = {
   loginForm: loginReducer,
 };
 
-const LoginForm = memo(({ className }: LoginFormProps) => {
+const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
   const { t } = useTranslation();
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useAppDispatch();
   const username = useSelector(getLoginUsername);
   const password = useSelector(getLoginPassword);
   const isLoading = useSelector(getLoginIsLoading);
@@ -48,11 +49,12 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
   );
 
   const onLoginClick = useCallback(
-    (e: React.MouseEvent<HTMLButtonElement>) => {
+    async (e: React.MouseEvent<HTMLButtonElement>) => {
       e.preventDefault();
-      dispatch(loginByUsername({ username, password }));
+      const result = await dispatch(loginByUsername({ username, password }));
+      if (result.meta.requestStatus === 'fulfilled') onSuccess();
     },
-    [dispatch, username, password],
+    [dispatch, username, password, onSuccess],
   );
 
   return (
