@@ -10,7 +10,16 @@ import i18next from 'eslint-plugin-i18next';
 export default defineConfig([
   { files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'] },
   { ignores: ['node_modules/', 'build/', 'storybook-static/', 'json-server/'] },
-  { languageOptions: { globals: { ...globals.browser, ...globals.jest } } },
+  {
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.jest,
+        __IS__DEV__: true,
+        __API__: true,
+      },
+    },
+  },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,

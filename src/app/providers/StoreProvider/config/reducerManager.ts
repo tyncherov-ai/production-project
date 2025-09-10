@@ -9,17 +9,17 @@ import { ReducerManager, StateSchema, StateSchemaKey } from './StateSchema';
 export function createReducerManager(
   initialReducers: ReducersMapObject<StateSchema>,
 ): ReducerManager {
-  const reducers = { ...initialReducers };
+  const reducers: ReducersMapObject<StateSchema> = { ...initialReducers };
 
-  let combinedReducer = combineReducers(reducers);
+  let combinedReducer = combineReducers(reducers) as Reducer<StateSchema>;
 
   let keysToRemove: StateSchemaKey[] = [];
 
   return {
     getReducerMap: () => reducers,
 
-    reduce: (state: StateSchema, action: Action) => {
-      if (keysToRemove.length > 0) {
+    reduce: (state: StateSchema | undefined, action: Action) => {
+      if (keysToRemove.length > 0 && state) {
         state = { ...state };
         for (const key of keysToRemove) {
           delete state[key];
@@ -37,7 +37,7 @@ export function createReducerManager(
 
       reducers[key] = reducer;
 
-      combinedReducer = combineReducers(reducers);
+      combinedReducer = combineReducers(reducers) as Reducer<StateSchema>;
     },
 
     remove: (key: StateSchemaKey) => {
@@ -49,7 +49,7 @@ export function createReducerManager(
 
       keysToRemove.push(key);
 
-      combinedReducer = combineReducers(reducers);
+      combinedReducer = combineReducers(reducers) as Reducer<StateSchema>;
     },
   };
 }

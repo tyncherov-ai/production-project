@@ -1,21 +1,33 @@
 import './ProfilePage.scss';
-import { useTranslation } from 'react-i18next';
 import {
   DynamicModuleLoader,
   ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { profileReducer } from 'entities/Profile';
+import {
+  fetchProfileData,
+  ProfileCard,
+  profileReducer,
+} from 'entities/Profile';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { useEffect } from 'react';
 
 const reducers: ReducersList = {
   profile: profileReducer,
 };
 
 const ProfilePage = () => {
-  const { t } = useTranslation();
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(fetchProfileData());
+  }, [dispatch]);
+
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <div className="page__profile profile">
-        <div className="profile__container">{t('Profile Page')}</div>
+        <div className="profile__container">
+          <ProfileCard />
+        </div>
       </div>
     </DynamicModuleLoader>
   );

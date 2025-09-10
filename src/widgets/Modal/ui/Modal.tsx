@@ -1,5 +1,5 @@
 import { ReactNode, useCallback, useEffect, useState } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import './Modal.scss';
 import { Portal } from 'shared/ui/Portal';
 
@@ -22,7 +22,7 @@ const Modal = (props: ModalProps) => {
     }
   }, [isOpen]);
 
-  const mods: Record<string, boolean> = {
+  const mods: Mods = {
     'modal-opened': isOpen,
   };
 

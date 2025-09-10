@@ -52,7 +52,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     async (e: React.MouseEvent<HTMLButtonElement>) => {
       e.preventDefault();
       const result = await dispatch(loginByUsername({ username, password }));
-      if (result.meta.requestStatus === 'fulfilled') onSuccess();
+      if (result.meta.requestStatus === 'fulfilled') onSuccess?.();
     },
     [dispatch, username, password, onSuccess],
   );

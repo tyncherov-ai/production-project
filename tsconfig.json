@@ -9,6 +9,7 @@
     "jsx": "react-jsx",
     // Компилятор будет обрабатывать не только TS файлы, но и JS файлы
     "allowJs": true,
+    "strict": true,
     "moduleResolution": "bundler",
     // esModuleInterop позволяет работать с пакетами, которые используют common js(require() module.export) с помощью import
     "esModuleInterop": true,
