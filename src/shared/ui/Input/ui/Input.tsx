@@ -4,8 +4,9 @@ import { InputHTMLAttributes, memo } from 'react';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   className?: string;
-  value?: string;
+  value?: string | number;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  readonly?: boolean;
 }
 
 export const Input = memo((props: InputProps) => {
@@ -17,6 +18,7 @@ export const Input = memo((props: InputProps) => {
     onFocus,
     onBlur,
     placeholder,
+    readOnly,
     ...otherProps
   } = props;
 
@@ -44,6 +46,7 @@ export const Input = memo((props: InputProps) => {
       onBlur={onBlurHandler}
       placeholder={placeholder}
       autoComplete="off"
+      readOnly={readOnly}
       {...otherProps}
     />
   );

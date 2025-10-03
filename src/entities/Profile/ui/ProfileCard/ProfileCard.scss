@@ -1,2 +1,39 @@
-* {
+@import '~@styles/base/mixins';
+
+.profile-card {
+  padding-block: to-rem(24);
+
+  &__error {
+    color: var(--color-error);
+    text-align: center;
+  }
+
+  &__form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(to-rem(300), 1fr));
+    gap: to-rem(24);
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label {
+    font-size: to-rem(14);
+    font-weight: 500;
+    margin-bottom: to-rem(12);
+  }
+
+  &__input {
+    max-width: to-rem(400);
+
+    &:not(:last-child) {
+      margin-bottom: to-rem(16);
+    }
+  }
+
+  &__avatar {
+    margin-bottom: to-rem(32);
+  }
 }

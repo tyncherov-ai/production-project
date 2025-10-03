@@ -1,0 +1,24 @@
+@import '~@styles/base/mixins';
+
+.select {
+  display: flex;
+  align-items: center;
+
+  &__label {
+    margin-right: to-rem(10);
+  }
+
+  &__element {
+    background-color: var(--bg-secondary);
+    outline: none;
+    border: none;
+    border-radius: to-rem(10);
+    padding: to-rem(10) to-rem(14);
+    color: var(--text-primary);
+  }
+
+  &__option {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+  }
+}

@@ -1,38 +1,38 @@
 {
-    "posts": [
-        {
-            "id": "1",
-            "title": "json-server",
-            "userId": "1"
-        },
-        {
-            "id": "2",
-            "title": "json-server",
-            "userId": "2"
-        }
-    ],
-    "comments": [
-        {
-            "id": "1",
-            "body": "some comment",
-            "postId": "1"
-        }
-    ],
-    "users": [
-        {
-            "id": "1",
-            "username": "tigrarub",
-            "password": "qwerpoiuty"
-        }
-    ],
-    "profile": {
-        "firstname": "Tigra",
-        "lastname": "Rubie",
-        "age": 19,
-        "currency": "UZS",
-        "country": "Uzbekistan",
-        "city": "Tashkent",
-        "username": "tigrarub",
-        "avatar": ""
+  "posts": [
+    {
+      "id": "1",
+      "title": "json-server",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "title": "json-server",
+      "userId": "2"
     }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "body": "some comment",
+      "postId": "1"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "tigrarub",
+      "password": "qwerpoiuty"
+    }
+  ],
+  "profile": {
+    "firstname": "Tigra",
+    "lastname": "Rubie",
+    "age": 19,
+    "currency": "UZS",
+    "country": "Germany",
+    "city": "Tashkent",
+    "username": "tigrarub",
+    "avatar": "https://assets.leetcode.com/users/tyncherov_v/avatar_1757059977.png"
+  }
 }

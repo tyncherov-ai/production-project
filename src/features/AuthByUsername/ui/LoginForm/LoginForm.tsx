@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import './LoginForm.scss';
 import { useTranslation } from 'react-i18next';
-import { Input } from 'shared/ui/Input/ui/Input';
+import { Input } from 'shared/ui/Input';
 import { useSelector } from 'react-redux';
 import { memo, useCallback } from 'react';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';

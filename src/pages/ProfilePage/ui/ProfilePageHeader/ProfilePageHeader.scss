@@ -1,0 +1,14 @@
+@import '~@styles/base/mixins';
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: to-rem(16);
+  margin-bottom: to-rem(32);
+
+  &__buttons {
+    display: flex;
+    gap: to-rem(16);
+  }
+}

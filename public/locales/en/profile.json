@@ -1,6 +1,12 @@
 {
+  "Profile Page": "Profile Page",
+  "An error occurred while loading the profile": "An error occurred while loading the profile",
   "Profile": "Profile",
-  "profile": {
-    "Profile": "Profile"
-  }
+  "Edit": "Edit",
+  "Cancel": "Cancel",
+  "Your name": "Your name",
+  "Your surname": "Your surname",
+  "Save": "Save",
+  "Your age": "Your age",
+  "Your city": "Your city"
 }
