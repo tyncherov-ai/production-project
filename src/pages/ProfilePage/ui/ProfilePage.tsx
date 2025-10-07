@@ -16,9 +16,10 @@ import {
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
+import { ProfilePageFooter } from './ProfilePageHeader/ProfilePageFooter';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
+import { useTranslation } from 'react-i18next';
 
 const reducers: ReducersList = {
   profile: profileReducer,
@@ -26,6 +27,7 @@ const reducers: ReducersList = {
 
 const ProfilePage = () => {
   const dispatch = useAppDispatch();
+  const { t } = useTranslation('profile');
 
   const formData = useSelector(getProfileForm);
   const isLoading = useSelector(getProfileIsLoading);
@@ -72,7 +74,7 @@ const ProfilePage = () => {
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <div className="page__profile profile">
         <div className="profile__container">
-          <ProfilePageHeader />
+          <h4 className="profile-header__title">{t('Profile')}</h4>
           <ProfileCard
             data={formData}
             isLoading={isLoading}
@@ -87,6 +89,7 @@ const ProfilePage = () => {
             onChangeCountry={onChangeCountry}
             readonly={readonly}
           />
+          <ProfilePageFooter />
         </div>
       </div>
     </DynamicModuleLoader>

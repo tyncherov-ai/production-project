@@ -2,7 +2,10 @@ import webpack from 'webpack';
 import { BuildOptions } from './types/config';
 import { buildCssLoader } from './loaders/buildCssLoader';
 
-export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
+export function buildLoaders({
+  isDev,
+  paths,
+}: BuildOptions): webpack.RuleSetRule[] {
   const svgLoader = {
     test: /\.svg$/,
     use: ['@svgr/webpack'],
@@ -17,7 +20,7 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     ],
   };
 
-  const cssLoader = buildCssLoader(isDev);
+  const cssLoader = buildCssLoader(isDev, paths.src);
 
   // Если не изспользуем typescript - нужен babel-loader
   const typescriptLoader = {

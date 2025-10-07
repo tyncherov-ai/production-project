@@ -1,22 +1,47 @@
 @use 'sass:math';
 
-// Подключение миксинов
-@import 'base/mixins';
+// Обнуление
+@use 'null';
 
 // Подключение шрифтов
 @import 'https://fonts.googleapis.com/css?family=Montserrat:regular,500,600,700&display=swap&subset';
 
-// Переменные
-@import 'base/variables';
+// Стили тега BODY
+body {
+  transition: all 0.3s ease 0s;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
 
-// Палитра цветов
-@import 'base/colors-palette';
+// Оболочка app
+.app {
+  min-height: 100%;
+  display: flex;
+}
 
-// Обнуление
-@import 'base/null';
+// Оболочка wrapper
+.wrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 
-// Подключение стилей общих элементов проекта
-@import 'common';
+  @supports (overflow: clip) {
+    overflow: clip;
+  }
+
+  // Прижимаем footer
+  > main {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  // Фикс для слайдеров
+  > * {
+    min-width: 0;
+  }
+}
 
 // Ограничивающий контейнер
 // (i) Стили будут применяться ко
@@ -77,42 +102,5 @@
         padding: 0 to-rem(math.div($container-padding, 2));
       }
     }
-  }
-}
-
-// Стили тега BODY
-body {
-  transition: all 0.3s ease 0s;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-}
-
-// Оболочка app
-.app {
-  min-height: 100%;
-  display: flex;
-}
-
-// Оболочка wrapper
-.wrapper {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-
-  @supports (overflow: clip) {
-    overflow: clip;
-  }
-
-  // Прижимаем footer
-  > main {
-    flex: 1 1 auto;
-    display: flex;
-    flex-direction: column;
-  }
-
-  // Фикс для слайдеров
-  > * {
-    min-width: 0;
   }
 }
