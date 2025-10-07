@@ -8,5 +8,12 @@
   "Your surname": "Your surname",
   "Save": "Save",
   "Your age": "Your age",
-  "Your city": "Your city"
+  "Your city": "Your city",
+  "errors": {
+    "Incorrect user data": "Incorrect user data",
+    "Incorrect age": "Incorrect age",
+    "Incorrect country": "Incorrect country",
+    "No data": "No data",
+    "Server error": "Server error"
+  }
 }

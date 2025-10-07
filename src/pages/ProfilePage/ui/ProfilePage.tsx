@@ -9,14 +9,16 @@ import {
   getProfileForm,
   getProfileIsLoading,
   getProfileReadonly,
+  getProfileValidateErrors,
   profileActions,
   ProfileCard,
   profileReducer,
+  ValidateProfileError,
 } from 'entities/Profile';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { ProfilePageFooter } from './ProfilePageHeader/ProfilePageFooter';
+import { ProfilePageFooter } from './ProfilePageFooter/ProfilePageFooter';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
 import { useTranslation } from 'react-i18next';
@@ -33,6 +35,16 @@ const ProfilePage = () => {
   const isLoading = useSelector(getProfileIsLoading);
   const error = useSelector(getProfileError);
   const readonly = useSelector(getProfileReadonly);
+  const validateErrors = useSelector(getProfileValidateErrors);
+
+  const validateErrorsTranslates = {
+    [ValidateProfileError.INCORRECT_USER_DATA]: t('errors.Incorrect user data'),
+    [ValidateProfileError.INCORRECT_AGE]: t('errors.Incorrect age'),
+    [ValidateProfileError.INCORRECT_COUNTRY]: t('errors.Incorrect country'),
+    [ValidateProfileError.NO_DATA]: t('errors.No data'),
+    [ValidateProfileError.SERVER_ERROR]: t('errors.Server error'),
+    [ValidateProfileError.INCORRECT_USERNAME]: t('errors.Incorrect username'),
+  };
 
   useEffect(() => {
     dispatch(fetchProfileData());
@@ -75,6 +87,16 @@ const ProfilePage = () => {
       <div className="page__profile profile">
         <div className="profile__container">
           <h4 className="profile-header__title">{t('Profile')}</h4>
+          {validateErrors?.length &&
+            validateErrors.map((err) => (
+              <div
+                key={err}
+                className="profile__validate-error"
+                data-testid="ProfilePage.Error"
+              >
+                {validateErrorsTranslates[err]}
+              </div>
+            ))}
           <ProfileCard
             data={formData}
             isLoading={isLoading}

@@ -14,5 +14,13 @@
   "Return to Homepage": "Return to Homepage",
   "Something went wrong": "Something went wrong",
   "Username": "Username",
+  "errors": {
+    "Incorrect age": "Incorrect age",
+    "Incorrect country": "Incorrect country",
+    "Incorrect user data": "Incorrect user data",
+    "Incorrect username": "Incorrect username",
+    "No data": "No data",
+    "Server error": "Server error"
+  },
   "language": "language"
 }

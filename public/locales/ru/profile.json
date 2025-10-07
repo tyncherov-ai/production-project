@@ -8,5 +8,20 @@
   "Your surname": "Ваша фамилия",
   "Save": "Сохранить",
   "Your age": "Ваш возраст",
-  "Your city": "Ваш город"
+  "Your city": "Ваш город",
+  "errors": {
+    "Incorrect user data": "Неверные пользовательские данные",
+    "Incorrect country": "Неправильная страна",
+    "Incorrect age": "Неправильный возраст",
+    "No data": "Нет данных",
+    "Server error": "Ошибка сервера"
+  },
+  "profile": {
+    "errors": {
+      "Incorrect username": "Неверное имя пользователя",
+      "Incorrect age": "",
+      "dfdf": ""
+    }
+  },
+  "profile.errors.Incorrect user data": "Неверные данные пользователя"
 }

@@ -1,7 +1,7 @@
 {
   "explorer.compactFolders": false,
   "i18n-ally.localesPaths": ["public/locales", "src/shared/config/i18n"],
-  "i18n-ally.keystyle": "nested",
+  "i18n-ally.keystyle": "flat",
   "[scss]": {
     "editor.defaultFormatter": "stylelint.vscode-stylelint"
   },
