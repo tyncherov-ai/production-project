@@ -27,5 +27,5 @@ export interface ProfileSchema {
   isLoading: boolean;
   error?: string;
   readonly: boolean;
-  validateError?: ValidateProfileError[];
+  validateErrors?: ValidateProfileError[];
 }

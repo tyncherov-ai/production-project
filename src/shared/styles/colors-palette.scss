@@ -1,7 +1,7 @@
 // ===============
 // Палитра цветов
 // ===============
-html[data-theme='light'] {
+[data-theme='light'] {
   // Site colors (Цвета сайта):
   // =================================================================
   --primary: #3498db; // Site main color - (Основной цвет сайта)
@@ -27,7 +27,7 @@ html[data-theme='light'] {
   --color-error: #f33;
 }
 
-html[data-theme='dark'] {
+[data-theme='dark'] {
   // Site colors (Цвета сайта):
   // =================================================================
   --primary: #8e44ad; // Site main color - (Основной цвет сайта)

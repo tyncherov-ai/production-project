@@ -18,10 +18,13 @@ export const updateProfileData = createAsyncThunk<
   }
 
   try {
-    const response = await extra.api.post<Profile>('/profile', formData);
+    const response = await extra.api.put<Profile>('/profile', formData);
+    if (!response.data) {
+      throw new Error('No data received');
+    }
     return response.data;
-  } catch (e) {
-    console.error(e);
+  } catch (error) {
+    console.log(error);
     return rejectWithValue([ValidateProfileError.SERVER_ERROR]);
   }
 });

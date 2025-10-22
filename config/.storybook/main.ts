@@ -28,7 +28,9 @@ const config: StorybookConfig = {
   webpackFinal: async (config) => {
     config?.resolve?.modules?.push(path.resolve(__dirname, '../../src'));
     config?.resolve?.extensions?.push('.ts', '.tsx');
-    config?.module?.rules?.push(buildCssLoader(true));
+    config?.module?.rules?.push(
+      buildCssLoader(true, path.resolve(__dirname, '../../src')),
+    );
     if (config.resolve) {
       config.resolve.alias = {
         ...(config.resolve.alias || {}),
@@ -44,6 +46,7 @@ const config: StorybookConfig = {
       new DefinePlugin({
         __IS_DEV__: JSON.stringify(true),
         __API__: JSON.stringify(''),
+        __PROJECT__: JSON.stringify('storybook'),
       }),
     );
     return config;

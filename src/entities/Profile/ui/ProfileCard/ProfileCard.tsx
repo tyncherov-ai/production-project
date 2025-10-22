@@ -68,7 +68,6 @@ export const ProfileCard = (props: ProfileCardProps) => {
           <label className="profile-card__label">{t('Your name')}</label>
           <Input
             value={data?.firstname}
-            placeholder={t('Your name')}
             onChange={(e) => onChangeFirstName?.(e.target.value)}
             readOnly={readonly}
             className="profile-card__input"
@@ -78,7 +77,6 @@ export const ProfileCard = (props: ProfileCardProps) => {
           <label className="profile-card__label">{t('Your surname')}</label>
           <Input
             value={data?.lastname}
-            placeholder={t('Your surname')}
             onChange={(e) => onChangeLastName?.(e.target.value)}
             readOnly={readonly}
             className="profile-card__input"
@@ -88,7 +86,6 @@ export const ProfileCard = (props: ProfileCardProps) => {
           <label className="profile-card__label">{t('Your age')}</label>
           <Input
             value={data?.age}
-            placeholder={t('Your age')}
             onChange={(e) => onChangeAge?.(e.target.value)}
             readOnly={readonly}
             className="profile-card__input"
@@ -98,7 +95,6 @@ export const ProfileCard = (props: ProfileCardProps) => {
           <label className="profile-card__label">{t('Your city')}</label>
           <Input
             value={data?.city}
-            placeholder={t('Your city')}
             onChange={(e) => onChangeCity?.(e.target.value)}
             readOnly={readonly}
             className="profile-card__input"
@@ -108,7 +104,6 @@ export const ProfileCard = (props: ProfileCardProps) => {
           <label className="profile-card__label">{t('Your username')}</label>
           <Input
             value={data?.username}
-            placeholder={t('Your username')}
             onChange={(e) => onChangeUsername?.(e.target.value)}
             readOnly={readonly}
             className="profile-card__input"
@@ -118,7 +113,6 @@ export const ProfileCard = (props: ProfileCardProps) => {
           <label className="profile-card__label">{t('Your avatar link')}</label>
           <Input
             value={data?.avatar}
-            placeholder={t('Your avatar link')}
             onChange={(e) => onChangeAvatar?.(e.target.value)}
             readOnly={readonly}
             className="profile-card__input"

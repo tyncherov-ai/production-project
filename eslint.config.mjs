@@ -17,6 +17,7 @@ export default defineConfig([
         ...globals.jest,
         __IS__DEV__: true,
         __API__: true,
+        __PROJECT__: true,
       },
     },
   },

@@ -10,6 +10,7 @@ const config: Config = {
   globals: {
     __IS_DEV__: true,
     __API__: JSON.stringify(''),
+    __PROJECT__: JSON.stringify('jest'),
     TextEncoder: TextEncoder,
     TextDecoder: TextDecoder,
   },
