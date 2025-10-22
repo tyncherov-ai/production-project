@@ -8,7 +8,7 @@ const MainPage = () => {
   return (
     <div className="page__main main">
       <div className="main__container">
-        <div> {t('Main')}</div>
+        <div style={{ color: 'red' }}> {t('Main')}</div>
         <Counter />
       </div>
     </div>

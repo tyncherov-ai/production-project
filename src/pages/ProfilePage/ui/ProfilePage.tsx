@@ -88,7 +88,7 @@ const ProfilePage = () => {
         <div className="profile__container">
           <h4 className="profile-header__title">{t('Profile')}</h4>
           {validateErrors?.length &&
-            validateErrors.map((err) => (
+            validateErrors.map((err: ValidateProfileError) => (
               <div
                 key={err}
                 className="profile__validate-error"

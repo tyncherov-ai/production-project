@@ -6,7 +6,7 @@ describe('getProfileValidateErrors.test', () => {
   test('should return profile validate errors', () => {
     const state = {
       profile: {
-        validateError: [ValidateProfileError.INCORRECT_USER_DATA],
+        validateErrors: [ValidateProfileError.INCORRECT_USER_DATA],
       },
     } as StateSchema;
     expect(getProfileValidateErrors(state)).toEqual([
