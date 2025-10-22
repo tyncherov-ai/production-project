@@ -42,6 +42,7 @@ export const AuthNavbar: Story = {
           id: '1',
           username: 'admin',
         },
+        _inited: true,
       },
     }),
   ],

@@ -17,6 +17,7 @@ const meta: Meta<typeof Sidebar> = {
           username: 'qwer',
           id: '3',
         },
+        _inited: true,
       },
     }),
   ],
@@ -33,5 +34,5 @@ export const Dark: Story = {
 };
 
 export const NoAuth: Story = {
-  decorators: [StoreDecorator({ user: {} })],
+  decorators: [StoreDecorator({ user: { _inited: true } })],
 };
