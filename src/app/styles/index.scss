@@ -19,6 +19,10 @@ body {
   display: flex;
 }
 
+.page {
+  padding-top: to-rem(30);
+}
+
 // Оболочка wrapper
 .wrapper {
   flex-grow: 1;

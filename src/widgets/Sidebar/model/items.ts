@@ -1,5 +1,5 @@
 import { IconType } from 'react-icons';
-import { GoHome, GoPeople, GoPerson } from 'react-icons/go';
+import { GoHome, GoNote, GoPeople, GoPerson } from 'react-icons/go';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 
 export interface SidebarItemType {
@@ -24,6 +24,12 @@ export const SidebarItemsList: SidebarItemType[] = [
     path: RoutePath.profile,
     Icon: GoPerson,
     text: 'Profile',
+    authOnly: true,
+  },
+  {
+    path: RoutePath.articles,
+    Icon: GoNote,
+    text: 'Articles',
     authOnly: true,
   },
 ];
