@@ -34,8 +34,10 @@ export default defineConfig([
       },
     },
     rules: {
-      quotes: ['error', 'single'],
-      semi: ['error', 'always'],
+      'prettier/prettier': [
+        'error',
+        { singleQuote: true, semi: true, endOfLine: 'auto' },
+      ],
       'react/react-in-jsx-scope': 'off',
       'no-unused-vars': 'off',
       '@typescript-eslint/no-unused-vars': 'warn',

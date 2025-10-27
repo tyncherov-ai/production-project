@@ -1,5 +1,5 @@
-@use 'sass:math';
-@use './variables' as *;
+@use "sass:math";
+@use "./variables" as *;
 
 // Подключение шрифта
 @mixin font($font_name, $file_name, $weight, $style) {
@@ -7,8 +7,8 @@
     font-family: $font_name;
     font-display: swap;
     src:
-      url('../fonts/#{$file_name}.woff2') format('woff2'),
-      url('../fonts/#{$file_name}.woff') format('woff');
+      url("../fonts/#{$file_name}.woff2") format("woff2"),
+      url("../fonts/#{$file_name}.woff") format("woff");
     font-weight: #{$weight};
     font-style: #{$style};
   }
@@ -38,7 +38,7 @@
 // Валюта
 @mixin currency($sym) {
   &::after {
-    content: '#{$sym}';
+    content: "#{$sym}";
   }
 }
 
@@ -109,21 +109,21 @@
     $y-intersection: 0.000001;
   }
 
-  $fly-value: #{to-rem($y-intersection)}' + ' #{$slope * 100}vw;
+  $fly-value: #{to-rem($y-intersection)}" + " #{$slope * 100}vw;
 
   // Получение значения свойства
-  $property-value: #{'clamp(' to-rem($min-size) ',' $fly-value ','
-    to-rem($start-size) ')'};
+  $property-value: #{"clamp(" to-rem($min-size) "," $fly-value ","
+    to-rem($start-size) ")"};
 
   // Если отрицательные значения
   @if $min-size > $start-size {
-    $property-value: #{'clamp('
+    $property-value: #{"clamp("
       to-rem($start-size)
-      ','
+      ","
       $fly-value
-      ','
+      ","
       to-rem($min-size)
-      ')'};
+      ")"};
   }
 
   // Устанавливаем значение по умолчанию

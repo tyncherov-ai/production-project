@@ -11,10 +11,10 @@
       padding-block: to-rem(110) to-rem(30);
       transition: left 0.3s;
 
-      @include adaptive-value('padding-inline', 50, 15);
+      @include adaptive-value("padding-inline", 50, 15);
 
       &::before {
-        content: '';
+        content: "";
         position: fixed;
         width: 100%;
         height: to-rem(106);
@@ -72,7 +72,7 @@
     span,
     &::before,
     &::after {
-      content: '';
+      content: "";
       transition: all 0.3s ease 0s;
       left: 0;
       position: absolute;

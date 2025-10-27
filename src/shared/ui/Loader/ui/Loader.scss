@@ -9,7 +9,7 @@
 
   &::before,
   &::after {
-    content: '';
+    content: "";
     grid-area: 1/1;
     margin: to-rem(2);
     border: inherit;

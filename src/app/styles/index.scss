@@ -1,10 +1,10 @@
-@use 'sass:math';
+@use "sass:math";
 
 // Обнуление
-@use 'null';
+@use "null";
 
 // Подключение шрифтов
-@import 'https://fonts.googleapis.com/css?family=Montserrat:regular,500,600,700&display=swap&subset';
+@import "https://fonts.googleapis.com/css?family=Montserrat:regular,500,600,700&display=swap&subset";
 
 // Стили тега BODY
 body {
@@ -55,7 +55,7 @@ body {
 
 @if $responsive-type == 1 {
   // Отзывчивый
-  [class*='__container'] {
+  [class*="__container"] {
     @if $max-width-container > 0 {
       max-width: to-rem($container-width);
       margin: 0 auto;
@@ -66,12 +66,12 @@ body {
         padding: 0 to-rem(math.div($container-padding, 2));
       } @else {
         @include adaptive-value(
-          'padding-left',
+          "padding-left",
           math.div($container-padding, 2),
           15
         );
         @include adaptive-value(
-          'padding-right',
+          "padding-right",
           math.div($container-padding, 2),
           15
         );
@@ -80,7 +80,7 @@ body {
   }
 } @else {
   // С брейкпоинтами
-  [class*='__container'] {
+  [class*="__container"] {
     margin: 0 auto;
 
     @if $max-width-container > 0 {
