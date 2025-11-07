@@ -29,6 +29,7 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  margin-left: to-rem(56);
 
   @supports (overflow: clip) {
     overflow: clip;

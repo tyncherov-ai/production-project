@@ -1,23 +1,8 @@
 {
   "explorer.compactFolders": false,
   "i18n-ally.localesPaths": ["public/locales", "src/shared/config/i18n"],
-  "i18n-ally.keystyle": "flat",
-  "[scss]": {
-    "editor.defaultFormatter": "stylelint.vscode-stylelint"
-  },
-  "stylelint.configFile": "",
-  "stylelint.validate": ["scss"],
-  "stylelint.snippet": [],
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "stylelint.config": {
-    "extends": "stylelint-config-standard-scss",
-    "plugins": ["stylelint-prettier"],
-    "rules": {
-      "prettier/prettier": true,
-      "block-no-empty": null,
-      "number-max-precision": 6
-    }
-  },
+  "i18n-ally.keystyle": "flat",
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -36,5 +21,19 @@
   },
   "[javascript]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint"
+  },
+  "stylelint.validate": ["scss"],
+  "stylelint.snippet": [],
+  "stylelint.config": {
+    "extends": "stylelint-config-standard-scss",
+    "plugins": ["stylelint-prettier"],
+    "rules": {
+      "prettier/prettier": [true, { "endOfLine": "auto" }],
+      "block-no-empty": null,
+      "number-max-precision": 6
+    }
   }
 }

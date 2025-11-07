@@ -38,7 +38,7 @@
       "id": "1",
       "title": "Новости Javascript",
       "subtitle": "Что нового в JS за 2025 год?",
-      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+      "img": "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "views": 2543,
       "createdAt": "15.01.2025",
       "type": [
@@ -58,8 +58,8 @@
         {
           "id": "2",
           "type": "IMAGE",
-          "src": "https://images.unsplash.com/photo-1549692520-ac66d4007b7f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTQ3NDZ8MHwxfHNlYXJjaHwxfHxKYXZhU2NyaXB0JTIwMjAyNXxlbnwwfHx8fDE3MTU0OTgxMjJ8MA&ixlib=rb-4.0.3&q=80&w=1080",
-          "title": "Рисунок 1 - Обложка новостей Javascript"
+          "src": "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+          "title": "Рисунок 1 - Код на экране"
         },
         {
           "id": "3",
@@ -90,7 +90,7 @@
       "id": "2",
       "title": "Тренды в веб-дизайне",
       "subtitle": "Что будет в моде в 2025 году?",
-      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+      "img": "https://images.pexels.com/photos/326503/pexels-photo-326503.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "views": 1876,
       "createdAt": "01.02.2025",
       "type": [
@@ -110,8 +110,8 @@
         {
           "id": "2",
           "type": "IMAGE",
-          "src": "https://images.unsplash.com/photo-1542831371-29b0f74f9d13?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTQ3NDZ8MHwxfHNlYXJjaHwxfHx3ZWIlMjBkZXNpZ24lMjAyMDI1fGVufDB8fHx8MTcxNTQ5ODEyMnww&ixlib=rb-4.0.3&q=80&w=1080",
-          "title": "Рисунок 2 - Современный веб-дизайн"
+          "src": "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+          "title": "Рисунок 2 - Процесс веб-дизайна"
         },
         {
           "id": "3",
@@ -133,7 +133,7 @@
       "id": "3",
       "title": "Кибербезопасность",
       "subtitle": "Главные угрозы 2025 года",
-      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+      "img": "https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "views": 3120,
       "createdAt": "10.03.2025",
       "type": [
@@ -153,7 +153,7 @@
         {
           "id": "2",
           "type": "IMAGE",
-          "src": "https://images.unsplash.com/photo-1542831371-29b0f74f9d13?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTQ3NDZ8MHwxfHNlYXJjaHwxfHxjeWJlcnNlY3VyaXR5JTIwMjAyNXxlbnwwfHx8fDE3MTU0OTgxMjJ8MA&ixlib=rb-4.0.3&q=80&w=1080",
+          "src": "https://images.pexels.com/photos/2004161/pexels-photo-2004161.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
           "title": "Рисунок 3 - Концепция кибербезопасности"
         },
         {
@@ -176,7 +176,7 @@
       "id": "4",
       "title": "Облачные технологии",
       "subtitle": "Будущее инфраструктуры 2025",
-      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+      "img": "https://images.pexels.com/photos/3861964/pexels-photo-3861964.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "views": 2890,
       "createdAt": "20.04.2025",
       "type": [
@@ -196,7 +196,7 @@
         {
           "id": "2",
           "type": "IMAGE",
-          "src": "https://images.unsplash.com/photo-1542831371-29b0f74f9d13?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTQ3NDZ8MHwxfHNlYXJjaHwxfHxjbG91ZCUyMHRlY2hub2xvZ3klMjAyMDI1fGVufDB8fHx8MTcxNTQ5ODEyMnww&ixlib=rb-4.0.3&q=80&w=1080",
+          "src": "https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
           "title": "Рисунок 4 - Облачные вычисления"
         },
         {
@@ -219,7 +219,7 @@
       "id": "5",
       "title": "Искусственный интеллект",
       "subtitle": "Прорывы и перспективы 2025 года",
-      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+      "img": "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "views": 4500,
       "createdAt": "05.05.2025",
       "type": [
@@ -239,8 +239,8 @@
         {
           "id": "2",
           "type": "IMAGE",
-          "src": "https://images.unsplash.com/photo-1542831371-29b0f74f9d13?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTQ3NDZ8MHwxfHNlYXJjaHwxfHxJbnRlbGxpZ2VuY2UlMjAyMDI1fGVufDB8fHx8MTcxNTQ5ODEyMnww&ixlib=rb-4.0.3&q=80&w=1080",
-          "title": "Рисунок 5 - Искусственный интеллект"
+          "src": "https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+          "title": "Рисунок 5 - Искусственный интеллект в работе"
         },
         {
           "id": "3",

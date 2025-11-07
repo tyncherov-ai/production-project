@@ -1,16 +1,21 @@
+import { ArticleCodeBlock } from 'entities/Article/model/types/article';
+import { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { Code } from 'shared/ui/Code/Code';
 
 interface ArticleCodeBlockComponentProps {
   className?: string;
+  block: ArticleCodeBlock;
 }
 
-export const ArticleCodeBlockComponent = ({
-  className,
-}: ArticleCodeBlockComponentProps) => {
-  return (
-    // eslint-disable-next-line i18next/no-literal-string
-    <div className={classNames('', {}, [className])}>
-      ArticleCodeBlockComponent
-    </div>
-  );
-};
+export const ArticleCodeBlockComponent = memo(
+  ({ className, block }: ArticleCodeBlockComponentProps) => {
+    return (
+      <div className={classNames('article-codeblock', {}, [className])}>
+        <Code className="article-codeblock__code" text={block.code} />
+      </div>
+    );
+  },
+);
+
+ArticleCodeBlockComponent.displayName = 'ArticleCodeBlockComponent';

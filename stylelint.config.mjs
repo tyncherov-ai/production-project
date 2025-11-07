@@ -3,7 +3,7 @@ export default {
   extends: ['stylelint-config-standard-scss'],
   plugins: ['stylelint-prettier'],
   rules: {
-    'prettier/prettier': true,
+    'prettier/prettier': [true, { endOfLine: 'auto' }],
     'block-no-empty': null,
     'number-max-precision': 6,
     'no-empty-source': null,

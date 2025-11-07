@@ -1,18 +1,7 @@
-.article-details {
+.article-details-page {
   min-height: 100%;
 
   &__container {
     height: 100%;
-  }
-
-  &__error {
-    color: var(--color-error);
-    text-align: center;
-  }
-
-  &__skeletons {
-    display: flex;
-    flex-direction: column;
-    gap: to-rem(16);
   }
 }

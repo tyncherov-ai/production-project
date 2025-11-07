@@ -3,6 +3,11 @@
   width: to-rem(250);
   background-color: var(--bg-secondary);
   border-radius: 0 to-rem(10) to-rem(10) 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: var(--sidebar-z-index);
 
   &.collapsed {
     width: to-rem(56);

@@ -1,0 +1,24 @@
+.code {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: to-rem(16);
+  background-color: var(--bg-secondary);
+  transition: background-color 0.3s;
+  border-radius: to-rem(10);
+
+  &__copy {
+    align-self: flex-end;
+    color: var(--accent);
+    cursor: pointer;
+  }
+
+  code {
+    overflow: auto hidden;
+    height: 100%;
+    font-size: to-rem(14);
+    padding-block: to-rem(12);
+  }
+}

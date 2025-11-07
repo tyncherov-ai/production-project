@@ -1,13 +1,7 @@
-import { Meta, StoryObj } from '@storybook/react';
-import ArticleDetailsPage from './ArticleDetailsPage';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
-import { Article } from 'entities/Article';
-import {
-  ArticleBlockType,
-  ArticleType,
-} from 'entities/Article/model/types/article';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
+import { articleDetailsReducer } from './articleDetailsSlice';
+import { Article, ArticleBlockType, ArticleType } from '../types/article';
+import { ArticleDetailsSchema } from '../types/articleDetailsSchema';
+import { fetchArticleById } from '../services/fetchArticleById/fetchArticleById';
 
 const article: Article = {
   id: '1',
@@ -59,60 +53,54 @@ const article: Article = {
   ],
 };
 
-const meta: Meta<typeof ArticleDetailsPage> = {
-  title: 'pages/ArticleDetailsPage',
-  component: ArticleDetailsPage,
-  argTypes: {
-    className: { control: 'text' },
-  },
-};
+describe('articleDetailsSlice.test', () => {
+  test('test update article details pending', () => {
+    const state: Partial<ArticleDetailsSchema> = {
+      isLoading: false,
+      error: 'some error',
+    };
+    expect(
+      articleDetailsReducer(
+        state as ArticleDetailsSchema,
+        fetchArticleById.pending('', '1'),
+      ),
+    ).toEqual({ isLoading: true, error: undefined });
+  });
 
-export default meta;
+  test('test update article details fulfilled', () => {
+    const state: Partial<ArticleDetailsSchema> = {
+      isLoading: true,
+    };
+    expect(
+      articleDetailsReducer(
+        state as ArticleDetailsSchema,
+        fetchArticleById.fulfilled(article, '', '1'),
+      ),
+    ).toEqual({
+      isLoading: false,
+      data: article,
+    });
+  });
 
-type Story = StoryObj<typeof ArticleDetailsPage>;
-
-export const Default: Story = {
-  decorators: [
-    StoreDecorator({
-      articleDetails: {
-        data: article,
-        isLoading: false,
-      },
-    }),
-  ],
-};
-
-export const Dark: Story = {
-  decorators: [
-    StoreDecorator({
-      articleDetails: {
-        data: article,
-        isLoading: false,
-      },
-    }),
-    ThemeDecorator(Theme.DARK),
-  ],
-};
-
-export const Loading: Story = {
-  decorators: [
-    StoreDecorator({
-      articleDetails: {
-        data: article,
-        isLoading: true,
-      },
-    }),
-  ],
-};
-
-export const Error: Story = {
-  decorators: [
-    StoreDecorator({
-      articleDetails: {
-        data: article,
-        isLoading: true,
-        error: 'error',
-      },
-    }),
-  ],
-};
+  test('test update article details rejected', () => {
+    const state: Partial<ArticleDetailsSchema> = {
+      isLoading: true,
+      data: article,
+    };
+    expect(
+      articleDetailsReducer(
+        state as ArticleDetailsSchema,
+        fetchArticleById.rejected(
+          new Error(),
+          '',
+          '1',
+          'Error during fetching article details',
+        ),
+      ),
+    ).toEqual({
+      isLoading: false,
+      error: 'Error during fetching article details',
+      data: article,
+    });
+  });
+});

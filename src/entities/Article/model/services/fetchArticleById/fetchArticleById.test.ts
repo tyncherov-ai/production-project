@@ -1,13 +1,6 @@
-import { Meta, StoryObj } from '@storybook/react';
-import ArticleDetailsPage from './ArticleDetailsPage';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
-import { Article } from 'entities/Article';
-import {
-  ArticleBlockType,
-  ArticleType,
-} from 'entities/Article/model/types/article';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
+import { fetchArticleById } from './fetchArticleById';
+import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
+import { Article, ArticleBlockType, ArticleType } from '../../types/article';
 
 const article: Article = {
   id: '1',
@@ -59,60 +52,26 @@ const article: Article = {
   ],
 };
 
-const meta: Meta<typeof ArticleDetailsPage> = {
-  title: 'pages/ArticleDetailsPage',
-  component: ArticleDetailsPage,
-  argTypes: {
-    className: { control: 'text' },
-  },
-};
+jest.mock('axios');
 
-export default meta;
+describe('fetchArticleById.test', () => {
+  test('success fetching article details', async () => {
+    const thunk = new TestAsyncThunk(fetchArticleById);
+    thunk.api.get.mockReturnValue(Promise.resolve({ data: article }));
+    const result = await thunk.callThunk('1');
 
-type Story = StoryObj<typeof ArticleDetailsPage>;
+    expect(thunk.api.get).toHaveBeenCalled();
+    expect(result.meta.requestStatus).toBe('fulfilled');
+    expect(result.payload).toEqual(article);
+  });
 
-export const Default: Story = {
-  decorators: [
-    StoreDecorator({
-      articleDetails: {
-        data: article,
-        isLoading: false,
-      },
-    }),
-  ],
-};
+  test('error fetching article details', async () => {
+    const thunk = new TestAsyncThunk(fetchArticleById);
+    thunk.api.get.mockReturnValue(Promise.resolve({ status: 403 }));
+    const result = await thunk.callThunk('1');
 
-export const Dark: Story = {
-  decorators: [
-    StoreDecorator({
-      articleDetails: {
-        data: article,
-        isLoading: false,
-      },
-    }),
-    ThemeDecorator(Theme.DARK),
-  ],
-};
-
-export const Loading: Story = {
-  decorators: [
-    StoreDecorator({
-      articleDetails: {
-        data: article,
-        isLoading: true,
-      },
-    }),
-  ],
-};
-
-export const Error: Story = {
-  decorators: [
-    StoreDecorator({
-      articleDetails: {
-        data: article,
-        isLoading: true,
-        error: 'error',
-      },
-    }),
-  ],
-};
+    expect(thunk.api.get).toHaveBeenCalled();
+    expect(result.meta.requestStatus).toBe('rejected');
+    expect(result.payload).toEqual('Error during fetching article details');
+  });
+});

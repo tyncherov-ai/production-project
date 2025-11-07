@@ -14,8 +14,7 @@ export const fetchArticleById = createAsyncThunk<
       throw new Error('No data received');
     }
     return response.data;
-  } catch (e) {
-    console.error(e);
+  } catch {
     return rejectWithValue('Error during fetching article details');
   }
 });

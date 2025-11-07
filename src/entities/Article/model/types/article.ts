@@ -31,7 +31,12 @@ export type ArticleBlock =
   | ArticleImageBlock
   | ArticleTextBlock;
 
-export type ArticleType = 'IT' | 'SCIENCE' | 'ECONOMICS' | 'SPORT';
+export enum ArticleType {
+  IT = 'IT',
+  SCIENCE = 'SCIENCE',
+  ECONOMICS = 'ECONOMICS',
+  SPORT = 'SPORT',
+}
 
 export interface Article {
   id: string;

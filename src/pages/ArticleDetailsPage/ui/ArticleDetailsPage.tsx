@@ -13,11 +13,11 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   const { id } = useParams<{ id: string }>();
   return (
     <div
-      className={classNames('page__article-details article-details', {}, [
+      className={classNames('page__article-details article-details-page', {}, [
         className,
       ])}
     >
-      <div className="article-details__container">
+      <div className="article-details-page__container">
         {id && <ArticleDetails id={id} />}
       </div>
     </div>

@@ -7,15 +7,18 @@ interface AvatarProps {
   className?: string;
   src?: string;
   size: number;
+  rounded?: boolean;
 }
 
-export const Avatar = ({ className, src, size }: AvatarProps) => {
+export const Avatar = (props: AvatarProps) => {
+  const { className, src, size, rounded = true } = props;
   const styles = useMemo<CSSProperties>(() => {
     return {
       width: size,
       height: size,
+      borderRadius: rounded ? '50%' : '8px',
     };
-  }, [size]);
+  }, [size, rounded]);
 
   return (
     <div className={classNames('avatar', {}, [className])} style={styles}>
