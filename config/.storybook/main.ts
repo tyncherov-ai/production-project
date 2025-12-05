@@ -1,6 +1,7 @@
 import type { StorybookConfig } from '@storybook/react-webpack5';
 import path from 'path';
 import { buildCssLoader } from '../build/loaders/buildCssLoader';
+import { DefinePlugin } from 'webpack';
 
 const config: StorybookConfig = {
   stories: ['../../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
@@ -27,7 +28,27 @@ const config: StorybookConfig = {
   webpackFinal: async (config) => {
     config?.resolve?.modules?.push(path.resolve(__dirname, '../../src'));
     config?.resolve?.extensions?.push('.ts', '.tsx');
-    config?.module?.rules?.push(buildCssLoader(true));
+    config?.module?.rules?.push(
+      buildCssLoader(true, path.resolve(__dirname, '../../src')),
+    );
+    if (config.resolve) {
+      config.resolve.alias = {
+        ...(config.resolve.alias || {}),
+        '@styles': path.resolve(__dirname, '../../src/app/styles'),
+        entities: path.resolve(__dirname, '../../src/entities'),
+        shared: path.resolve(__dirname, '../../src/shared'),
+        features: path.resolve(__dirname, '../../src/features'),
+        widgets: path.resolve(__dirname, '../../src/widgets'),
+        app: path.resolve(__dirname, '../../src/app'),
+      };
+    }
+    config.plugins?.push(
+      new DefinePlugin({
+        __IS_DEV__: JSON.stringify(true),
+        __API__: JSON.stringify(''),
+        __PROJECT__: JSON.stringify('storybook'),
+      }),
+    );
     return config;
   },
 };

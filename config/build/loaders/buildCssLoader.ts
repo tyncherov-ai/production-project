@@ -1,6 +1,6 @@
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
-export const buildCssLoader = (isDev: boolean) => ({
+export const buildCssLoader = (isDev: boolean, srcPath: string) => ({
   test: /\.s[ac]ss$/i,
   use: [
     isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
@@ -15,6 +15,14 @@ export const buildCssLoader = (isDev: boolean) => ({
         },
       },
     },
-    'sass-loader',
+    {
+      loader: 'sass-loader',
+      options: {
+        additionalData: '@use "shared/styles/index.scss" as *;',
+        sassOptions: {
+          includePaths: [srcPath],
+        },
+      },
+    },
   ],
 });

@@ -1,5 +1,3 @@
-@import '../../../shared/ui/styles/mixins';
-
 .not-found {
   height: 100%;
 
@@ -23,7 +21,7 @@
   &__title {
     color: var(--accent);
 
-    @include adaptive-value('font-size', 32, 16);
+    @include adaptive-value("font-size", 32, 16);
 
     &:not(:last-child) {
       margin-bottom: to-rem(20);

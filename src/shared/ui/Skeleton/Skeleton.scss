@@ -1,0 +1,19 @@
+.skeleton {
+  background-color: var(--bg-secondary);
+  animation: pulse 1.5s infinite ease-in-out;
+  border-radius: to-rem(5);
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.5;
+  }
+}

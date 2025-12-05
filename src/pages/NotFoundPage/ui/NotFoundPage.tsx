@@ -13,9 +13,9 @@ const NotFoundPage = ({ className }: NotFoundPageProps) => {
     <div className={classNames('page__not-found not-found', {}, [className])}>
       <section className="not-found__container">
         <div className="not-found__body">
-          <h1 className="not-found__title">{t('Page Not Found')}</h1>
+          <h1 className="not-found__title">{t('pageNotFound')}</h1>
           <Link to="/" className="not-found__link">
-            {t('Return to Homepage')}
+            {t('returnToHomepage')}
           </Link>
         </div>
       </section>

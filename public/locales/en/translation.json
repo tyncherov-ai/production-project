@@ -1,9 +1,19 @@
 {
-  "Main": "Main",
-  "About": "About",
+  "main": "Main",
+  "about": "About",
+  "profile": "Profile",
+  "articles": "Articles",
   "language": "Русский",
-  "Return to Homepage": "Return to Homepage",
-  "Page Not Found": "Sorry, the page you're looking for does not exist",
-  "Something went wrong": "Something went wrong",
-  "Reload page": "Reload page"
+  "returnToHomepage": "Return to Homepage",
+  "pageNotFound": "Sorry, the page you're looking for does not exist",
+  "somethingWentWrong": "Something went wrong",
+  "reloadPage": "Reload page",
+  "logIn": "Log in",
+  "password": "Password",
+  "username": "Username",
+  "incorrectUsernameOrPassword": "Incorrect username or password",
+  "logOut": "Log out",
+  "confirm": "Confirm",
+  "cancel": "Cancel",
+  "areYouSureYouWantToLogOut": "Are you sure you want to log out?"
 }

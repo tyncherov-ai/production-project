@@ -1,0 +1,24 @@
+{
+  "profilePage": "Profile Page",
+  "errorLoadingProfile": "error loading profile",
+  "profile": "Profile",
+  "edit": "Edit",
+  "cancel": "Cancel",
+  "yourName": "Your name",
+  "yourSurname": "Your surname",
+  "save": "Save",
+  "yourAge": "Your age",
+  "yourCity": "Your city",
+  "yourUsername": "Your username",
+  "yourAvatarLink": "Your avatar link",
+  "chooseYourCurrency": "Choose your currency",
+  "chooseYourCountry": "Choose your country",
+  "errors": {
+    "incorrectUserData": "Incorrect user data",
+    "incorrectAge": "Incorrect age",
+    "incorrectCountry": "Incorrect country",
+    "noData": "No data",
+    "serverError": "Server error",
+    "incorrectUsername": "Incorrect username"
+  }
+}

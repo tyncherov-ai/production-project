@@ -1,0 +1,40 @@
+.article-details {
+  &__error {
+    color: var(--color-error);
+    text-align: center;
+  }
+
+  &__skeletons {
+    display: flex;
+    flex-direction: column;
+    gap: to-rem(16);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: to-rem(16);
+  }
+
+  &__title {
+    font-size: to-rem(32);
+  }
+
+  &__subtitle {
+    font-size: to-rem(24);
+  }
+
+  &__info {
+    display: flex;
+    gap: to-rem(8);
+    align-items: center;
+  }
+
+  &__blocks {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: to-rem(32);
+    padding-bottom: to-rem(24);
+  }
+}

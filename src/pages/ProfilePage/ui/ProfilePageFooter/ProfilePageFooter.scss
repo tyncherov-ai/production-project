@@ -1,0 +1,8 @@
+.profile-footer {
+  margin-top: to-rem(32);
+
+  &__buttons {
+    display: flex;
+    gap: to-rem(16);
+  }
+}

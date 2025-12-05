@@ -1,10 +1,10 @@
 import { Meta, StoryObj } from '@storybook/react';
-import Loader from './Loader';
+import { Loader } from './Loader';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 
 const meta: Meta<typeof Loader> = {
-  title: 'widgets/Loader',
+  title: 'shared/Loader',
   component: Loader,
   argTypes: {
     className: { control: 'text' },

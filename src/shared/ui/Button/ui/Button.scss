@@ -1,0 +1,58 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  transition: all 0.3s;
+  border-radius: to-rem(10);
+
+  &--primary {
+    background-color: var(--primary);
+    color: #fff;
+  }
+
+  &--secondary {
+    background-color: var(--secondary);
+    color: #111827;
+  }
+
+  &--outline {
+    background-color: transparent;
+    border: to-rem(1) solid var(--primary);
+    color: var(--text-primary);
+  }
+
+  &--clear {
+    background-color: transparent;
+    color: var(--text-primary);
+  }
+
+  &--s {
+    padding: to-rem(4) to-rem(6);
+    font-size: to-rem(14);
+  }
+
+  &--m {
+    padding: to-rem(10) to-rem(14);
+    font-size: to-rem(16);
+  }
+
+  &--l {
+    padding: to-rem(12) to-rem(20);
+    font-size: to-rem(18);
+  }
+
+  &.disabled,
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

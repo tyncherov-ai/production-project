@@ -1,0 +1,7 @@
+.article-imageblock {
+  max-width: to-rem(500);
+
+  &__img {
+    @extend %ibg;
+  }
+}

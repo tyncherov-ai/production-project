@@ -1,11 +1,21 @@
-import { StoryFn } from '@storybook/react/*';
+import { StoryFn } from '@storybook/react';
+import { ThemeProvider } from 'app/providers/ThemeProvider';
 import { Theme } from 'app/providers/ThemeProvider/lib/ThemeContext';
 
-// eslint-disable-next-line react/display-name
-export const ThemeDecorator = (theme: Theme) => (StoryComponent: StoryFn) => (
-  <html data-theme={theme}>
-    <body style={{ height: '100vh' }}>
-      <StoryComponent />
-    </body>
-  </html>
-);
+export const ThemeDecorator = (theme: Theme) => {
+  const Decorator = (StoryComponent: StoryFn) => (
+    <ThemeProvider initialTheme={theme}>
+      <div
+        data-theme={theme}
+        style={{
+          minHeight: '100vh',
+          backgroundColor: 'var(--bg-primary)',
+          color: 'var(--text-primary)',
+        }}
+      >
+        <StoryComponent />
+      </div>
+    </ThemeProvider>
+  );
+  return Decorator;
+};

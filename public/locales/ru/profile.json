@@ -1,0 +1,24 @@
+{
+  "profilePage": "Страница Профиля",
+  "errorLoadingProfile": "",
+  "profile": "Профиль",
+  "edit": "Редактировать",
+  "cancel": "Отмена",
+  "yourName": "Ваше имя",
+  "yourSurname": "Ваша фамилия",
+  "save": "Сохранить",
+  "yourAge": "Ваш возраст",
+  "yourCity": "Ваш город",
+  "yourUsername": "Ваше имя пользователя",
+  "yourAvatarLink": "Ссылка на аватар",
+  "chooseYourCurrency": "Выберите валюту",
+  "chooseYourCountry": "Выберите страну",
+  "errors": {
+    "incorrectUserData": "Неверные пользовательские данные",
+    "incorrectCountry": "Неправильная страна",
+    "incorrectAge": "Неправильный возраст",
+    "noData": "Нет данных",
+    "serverError": "Ошибка сервера",
+    "incorrectUsername": "Неправильное имя пользователя"
+  }
+}

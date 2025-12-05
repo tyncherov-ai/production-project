@@ -1,5 +1,3 @@
-@import '../../../shared/ui/styles/mixins';
-
 .header {
   transition: background-color 0.3s ease 0s;
   background-color: var(--bg-primary);
@@ -9,16 +7,15 @@
     padding-block: to-rem(20);
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
   }
 
   &__button {
   }
 
-  &__links {
+  &__items {
     display: flex;
     align-items: center;
     gap: to-rem(20);
-    flex-grow: 1;
   }
 }

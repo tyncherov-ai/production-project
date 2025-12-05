@@ -1,0 +1,19 @@
+.avatar {
+  border-radius: 50%;
+  border: to-rem(2) solid var(--primary);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--inverse);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.avatar-placeholder {
+  color: var(--primary);
+}

@@ -7,6 +7,13 @@ import type { Config } from 'jest';
 import path from 'path';
 
 const config: Config = {
+  globals: {
+    __IS_DEV__: true,
+    __API__: JSON.stringify(''),
+    __PROJECT__: JSON.stringify('jest'),
+    TextEncoder: TextEncoder,
+    TextDecoder: TextDecoder,
+  },
   clearMocks: true,
   testEnvironment: 'jsdom',
   coveragePathIgnorePatterns: ['\\\\node_modules\\\\'],
@@ -14,6 +21,7 @@ const config: Config = {
   moduleDirectories: ['node_modules'],
   modulePaths: ['<rootDir>src'],
   moduleNameMapper: {
+    '^(entities|shared|features|widgets|app)/(.*)$': '<rootDir>/src/$1/$2',
     '\\.(css|scss)$': 'identity-obj-proxy',
     '\\.(svg)': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
   },
@@ -115,7 +123,7 @@ const config: Config = {
   // runner: "jest-runner",
 
   // The paths to modules that run some code to configure or set up the testing environment before each test
-  // setupFiles: [],
+  setupFiles: ['<rootDir>config/jest/setupFiles.ts'],
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
   // setupFilesAfterEnv: [],

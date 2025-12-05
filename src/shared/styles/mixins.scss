@@ -1,0 +1,193 @@
+@use "sass:math";
+@use "./variables" as *;
+
+// Подключение шрифта
+@mixin font($font_name, $file_name, $weight, $style) {
+  @font-face {
+    font-family: $font_name;
+    font-display: swap;
+    src:
+      url("../fonts/#{$file_name}.woff2") format("woff2"),
+      url("../fonts/#{$file_name}.woff") format("woff");
+    font-weight: #{$weight};
+    font-style: #{$style};
+  }
+}
+
+// Процент
+@function percent($px, $from: 100) {
+  $result: math.div($px, $from) * 100%;
+
+  @return $result;
+}
+
+// REM
+@function to-rem($px, $current: 16) {
+  $result: math.div($px, $current) + rem;
+
+  @return $result;
+}
+
+// EM
+@function to-em($px, $current: 16) {
+  $result: math.div($px, $current) + em;
+
+  @return $result;
+}
+
+// Валюта
+@mixin currency($sym) {
+  &::after {
+    content: "#{$sym}";
+  }
+}
+
+// Треугольник
+@mixin triangle($direction, $color, $size, $size2: $size) {
+  @if $direction == left {
+    border: to-rem($size2) solid transparent;
+    border-right: to-rem($size) solid $color;
+  }
+
+  @if $direction == right {
+    border: to-rem($size2) solid transparent;
+    border-left: to-rem($size) solid $color;
+  }
+
+  @if $direction == top {
+    border: to-rem($size2) solid transparent;
+    border-bottom: to-rem($size) solid $color;
+  }
+
+  @if $direction == bottom {
+    border: to-rem($size2) solid transparent;
+    border-top: to-rem($size) solid $color;
+  }
+}
+
+// Сетки
+@mixin grid-cards($type: fit, $min: 280px, $max: 1fr, $gap: 30px) {
+  display: grid;
+  gap: $gap;
+  grid-template-columns: repeat(auto-#{$type}, minmax($min, $max));
+}
+
+// Адаптивное свойство (clamp)
+@mixin adaptive-value(
+  $property,
+  $start-size,
+  $min-size,
+  $keep-size: 0,
+  $width-from: $container-width,
+  $width-to: $min-width
+) {
+  @if $start-size == 0 {
+    $start-size: 0.000001;
+  }
+
+  @if $min-size == 0 {
+    $min-size: 0.000001;
+  }
+
+  // Для calc();
+  $add-size: math.div($start-size - $min-size, 16);
+
+  @if $width-from == $container-width and $max-width-container == 0 {
+    $width-from: $max-width;
+  }
+
+  // Брейкпоинты в EM
+  $width-from-media: to-em($width-from);
+  $width-to-media: to-em($width-to);
+
+  // Формула плавающего значения
+  // Источник: https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+  $slope: math.div(($start-size - $min-size), ($width-from - $width-to));
+  $y-intersection: -$width-to * $slope + $min-size;
+
+  @if $y-intersection == 0 {
+    $y-intersection: 0.000001;
+  }
+
+  $fly-value: #{to-rem($y-intersection)}" + " #{$slope * 100}vw;
+
+  // Получение значения свойства
+  $property-value: #{"clamp(" to-rem($min-size) "," $fly-value ","
+    to-rem($start-size) ")"};
+
+  // Если отрицательные значения
+  @if $min-size > $start-size {
+    $property-value: #{"clamp("
+      to-rem($start-size)
+      ","
+      $fly-value
+      ","
+      to-rem($min-size)
+      ")"};
+  }
+
+  // Устанавливаем значение по умолчанию
+  @if $keep-size != 1 and $keep-size != 3 {
+    @media (min-width: $width-from-media) {
+      #{$property}: to-rem($start-size);
+    }
+  }
+
+  // Адаптируем размер в промежутке между указанными ширинами вьюпорта
+  @media (min-width: $width-to-media) and (max-width: $width-from-media) {
+    #{$property}: $property-value;
+
+    // Если поддерживается clamp();
+    @supports (#{$property}: $property-value) {
+      #{$property}: $property-value;
+    }
+
+    // Если не поддерживается clamp();
+    @supports not (#{$property}: $property-value) {
+      #{$property}: calc(
+        #{to-rem($min-size)} + #{$add-size} * (100vw - #{to-rem($width-to)}) /
+          #{math.div($width-from, 16) - math.div($width-to, 16)}
+      );
+    }
+  }
+
+  @if $keep-size != 1 and $keep-size != 2 {
+    @media (max-width: $width-to-media) {
+      #{$property}: to-rem($min-size);
+    }
+  }
+}
+
+// Grid-контейнер
+@mixin grid-container(
+  $type: 0,
+  $container: $max-width-container,
+  $padding-start: math.div($container-padding, 2),
+  $padding-end: math.div($container-padding, 2)
+) {
+  display: grid;
+  min-width: 0;
+  grid-template-columns:
+    to-rem($padding-start) 1fr minmax(auto, to-rem($container))
+    1fr to-rem($padding-end);
+
+  > * {
+    min-width: 0;
+
+    @if $type == 1 {
+      grid-column: 1 / 6;
+    } @else if $type == 2 {
+      grid-column: 2 / 5;
+    } @else if $type == 3 {
+      grid-column: 3 / 6;
+    } @else if $type == 4 {
+      grid-column: 1 / 4;
+    } @else if $type == 5 {
+      grid-column: 2 / 4;
+    } @else if $type == 6 {
+      grid-column: 3 / 5;
+    } @else {
+      grid-column: 3 / 4;
+    }
+  }
+}
