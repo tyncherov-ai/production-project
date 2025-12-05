@@ -40,7 +40,7 @@ export const ProfilePageFooter = ({ className }: ProfilePageFooterProps) => {
           className="profile-footer__edit"
           onClick={onEdit}
         >
-          {t('Edit')}
+          {t('edit')}
         </Button>
       ) : (
         <div className="profile-footer__buttons">
@@ -49,10 +49,10 @@ export const ProfilePageFooter = ({ className }: ProfilePageFooterProps) => {
             className="profile-footer__cancel"
             onClick={onCancelEdit}
           >
-            {t('Cancel')}
+            {t('cancel')}
           </Button>
           <Button className="profile-footer__save" onClick={onSave}>
-            {t('Save')}
+            {t('save')}
           </Button>
         </div>
       )}

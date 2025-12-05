@@ -63,7 +63,7 @@ export const ArticleDetails = memo(({ id }: ArticleDetailsProps) => {
   if (error) {
     content = (
       <p className="article-details__error">
-        {t('An error occurred while loading the article details')}
+        {t('errorLoadingArticleDetails')}
       </p>
     );
   } else if (isLoading) {

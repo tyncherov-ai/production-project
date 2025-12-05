@@ -65,28 +65,28 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
           error ? 'error' : '',
         ])}
       >
-        <h5 className="login-form__title">{t('Log in')}</h5>
+        <h5 className="login-form__title">{t('logIn')}</h5>
         <Input
           className="login-form__input"
-          placeholder={t('Username')}
+          placeholder={t('username')}
           value={username}
           onChange={(e) => onChangeUsername(e.target.value)}
         />
         <Input
           className="login-form__input"
-          placeholder={t('Password')}
+          placeholder={t('password')}
           value={password}
           onChange={(e) => onChangePassword(e.target.value)}
         />
         <div className="login-form__error">
-          {t('Incorrect username or password')}
+          {t('incorrectUsernameOrPassword')}
         </div>
         <Button
           className="login-form__button"
           onClick={onLoginClick}
           disabled={isLoading}
         >
-          {t('Log in')}
+          {t('logIn')}
         </Button>
       </form>
     </DynamicModuleLoader>

@@ -13,23 +13,23 @@ export const SidebarItemsList: SidebarItemType[] = [
   {
     path: RoutePath.main,
     Icon: GoHome,
-    text: 'Main',
+    text: 'main',
   },
   {
     path: RoutePath.about,
     Icon: GoPeople,
-    text: 'About',
+    text: 'about',
   },
   {
     path: RoutePath.profile,
     Icon: GoPerson,
-    text: 'Profile',
+    text: 'profile',
     authOnly: true,
   },
   {
     path: RoutePath.articles,
     Icon: GoNote,
-    text: 'Articles',
+    text: 'articles',
     authOnly: true,
   },
 ];

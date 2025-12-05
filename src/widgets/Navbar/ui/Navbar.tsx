@@ -30,7 +30,7 @@ const Navbar = memo(({ className }: NavbarProps) => {
       <div className="header__container">
         <div className="header__items">
           <button onClick={onShowModal} className="header__button login-btn">
-            {t('Log out')}
+            {t('logOut')}
           </button>
           <LangSwitcher />
         </div>
@@ -44,7 +44,7 @@ const Navbar = memo(({ className }: NavbarProps) => {
       <div className="header__container">
         <div className="header__items">
           <button onClick={onShowModal} className="header__button login-btn">
-            {t('Log in')}
+            {t('logIn')}
           </button>
           <LangSwitcher />
         </div>

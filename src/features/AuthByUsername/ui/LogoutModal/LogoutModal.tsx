@@ -34,18 +34,18 @@ export const LogoutModal = ({
     >
       <div className="logout-modal__body">
         <h4 className="logout-modal__title">
-          {t('Are you sure you want to log out')}
+          {t('areYouSureYouWantToLogOut')}
         </h4>
         <div className="logout-modal__buttons">
           <Button className="logout-modal__button" onClick={onLogoutClick}>
-            {t('Confirm')}
+            {t('confirm')}
           </Button>
           <Button
             className="logout-modal__button cancel"
             onClick={onClose}
             theme="outline"
           >
-            {t('Cancel')}
+            {t('cancel')}
           </Button>
         </div>
       </div>

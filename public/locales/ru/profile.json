@@ -1,27 +1,24 @@
 {
-  "Profile Page": "Страница Профиля",
-  "An error occurred while loading the profile": "Произошла ошибка при загрузке профиля",
-  "Profile": "Профиль",
-  "Edit": "Редактировать",
-  "Cancel": "Отмена",
-  "Your name": "Ваше имя",
-  "Your surname": "Ваша фамилия",
-  "Save": "Сохранить",
-  "Your age": "Ваш возраст",
-  "Your city": "Ваш город",
+  "profilePage": "Страница Профиля",
+  "errorLoadingProfile": "",
+  "profile": "Профиль",
+  "edit": "Редактировать",
+  "cancel": "Отмена",
+  "yourName": "Ваше имя",
+  "yourSurname": "Ваша фамилия",
+  "save": "Сохранить",
+  "yourAge": "Ваш возраст",
+  "yourCity": "Ваш город",
+  "yourUsername": "Ваше имя пользователя",
+  "yourAvatarLink": "Ссылка на аватар",
+  "chooseYourCurrency": "Выберите валюту",
+  "chooseYourCountry": "Выберите страну",
   "errors": {
-    "Incorrect user data": "Неверные пользовательские данные",
-    "Incorrect country": "Неправильная страна",
-    "Incorrect age": "Неправильный возраст",
-    "No data": "Нет данных",
-    "Server error": "Ошибка сервера"
-  },
-  "profile": {
-    "errors": {
-      "Incorrect username": "Неверное имя пользователя",
-      "Incorrect age": "",
-      "dfdf": ""
-    }
-  },
-  "profile.errors.Incorrect user data": "Неверные данные пользователя"
+    "incorrectUserData": "Неверные пользовательские данные",
+    "incorrectCountry": "Неправильная страна",
+    "incorrectAge": "Неправильный возраст",
+    "noData": "Нет данных",
+    "serverError": "Ошибка сервера",
+    "incorrectUsername": "Неправильное имя пользователя"
+  }
 }

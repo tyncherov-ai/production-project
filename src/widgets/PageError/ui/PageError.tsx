@@ -14,9 +14,9 @@ const PageError = ({ className }: PageErrorProps) => {
 
   return (
     <div className={classNames('page-error', {}, [className])}>
-      <p className="page-error__text">{t('Something went wrong')};)</p>
+      <p className="page-error__text">{t('somethingWentWrong')};)</p>
       <button className="page-error__button" onClick={reloadPage}>
-        {t('Reload page')}
+        {t('reloadPage')}
       </button>
     </div>
   );

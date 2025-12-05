@@ -53,9 +53,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
   if (error) {
     return (
       <div className={classNames('profile-card', {}, [className])}>
-        <p className="profile-card__error">
-          {t('An error occurred while loading the profile')}
-        </p>
+        <p className="profile-card__error">{t('errorLoadingProfile')}</p>
       </div>
     );
   }
@@ -65,7 +63,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
       <Avatar size={120} src={data?.avatar} className="profile-card__avatar" />
       <div className="profile-card__form">
         <div className="profile-card__row">
-          <label className="profile-card__label">{t('Your name')}</label>
+          <label className="profile-card__label">{t('yourName')}</label>
           <Input
             value={data?.firstname}
             onChange={(e) => onChangeFirstName?.(e.target.value)}
@@ -74,7 +72,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
           />
         </div>
         <div className="profile-card__row">
-          <label className="profile-card__label">{t('Your surname')}</label>
+          <label className="profile-card__label">{t('yourSurname')}</label>
           <Input
             value={data?.lastname}
             onChange={(e) => onChangeLastName?.(e.target.value)}
@@ -83,7 +81,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
           />
         </div>
         <div className="profile-card__row">
-          <label className="profile-card__label">{t('Your age')}</label>
+          <label className="profile-card__label">{t('yourAge')}</label>
           <Input
             value={data?.age}
             onChange={(e) => onChangeAge?.(e.target.value)}
@@ -92,7 +90,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
           />
         </div>
         <div className="profile-card__row">
-          <label className="profile-card__label">{t('Your city')}</label>
+          <label className="profile-card__label">{t('yourCity')}</label>
           <Input
             value={data?.city}
             onChange={(e) => onChangeCity?.(e.target.value)}
@@ -101,7 +99,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
           />
         </div>
         <div className="profile-card__row">
-          <label className="profile-card__label">{t('Your username')}</label>
+          <label className="profile-card__label">{t('yourUsername')}</label>
           <Input
             value={data?.username}
             onChange={(e) => onChangeUsername?.(e.target.value)}
@@ -110,7 +108,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
           />
         </div>
         <div className="profile-card__row">
-          <label className="profile-card__label">{t('Your avatar link')}</label>
+          <label className="profile-card__label">{t('yourAvatarLink')}</label>
           <Input
             value={data?.avatar}
             onChange={(e) => onChangeAvatar?.(e.target.value)}
@@ -120,7 +118,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
         </div>
         <div className="profile-card__row">
           <label className="profile-card__label">
-            {t('Choose your currency')}
+            {t('chooseYourCurrency')}
           </label>
           <CurrencySelect
             value={data?.currency}
@@ -131,7 +129,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
         </div>
         <div className="profile-card__row">
           <label className="profile-card__label">
-            {t('Choose your country')}
+            {t('chooseYourCountry')}
           </label>
           <CountrySelect
             value={data?.country}

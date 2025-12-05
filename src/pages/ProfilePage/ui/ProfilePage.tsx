@@ -29,7 +29,7 @@ const reducers: ReducersList = {
 
 const ProfilePage = () => {
   const dispatch = useAppDispatch();
-  const { t } = useTranslation('profile');
+  const { t } = useTranslation('profile', { keyPrefix: 'very.deeply.nested' });
 
   const formData = useSelector(getProfileForm);
   const isLoading = useSelector(getProfileIsLoading);
@@ -38,12 +38,12 @@ const ProfilePage = () => {
   const validateErrors = useSelector(getProfileValidateErrors);
 
   const validateErrorsTranslates = {
-    [ValidateProfileError.INCORRECT_USER_DATA]: t('errors.Incorrect user data'),
-    [ValidateProfileError.INCORRECT_AGE]: t('errors.Incorrect age'),
-    [ValidateProfileError.INCORRECT_COUNTRY]: t('errors.Incorrect country'),
-    [ValidateProfileError.NO_DATA]: t('errors.No data'),
-    [ValidateProfileError.SERVER_ERROR]: t('errors.Server error'),
-    [ValidateProfileError.INCORRECT_USERNAME]: t('errors.Incorrect username'),
+    [ValidateProfileError.INCORRECT_USER_DATA]: t('errors.incorrectUserData'),
+    [ValidateProfileError.INCORRECT_AGE]: t('errors.incorrectAge'),
+    [ValidateProfileError.INCORRECT_COUNTRY]: t('errors.incorrectCountry'),
+    [ValidateProfileError.NO_DATA]: t('errors.noData'),
+    [ValidateProfileError.SERVER_ERROR]: t('errors.serverError'),
+    [ValidateProfileError.INCORRECT_USERNAME]: t('errors.incorrectUsername'),
   };
 
   useEffect(() => {
@@ -86,7 +86,7 @@ const ProfilePage = () => {
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <div className="page__profile profile">
         <div className="profile__container">
-          <h4 className="profile-header__title">{t('Profile')}</h4>
+          <h4 className="profile-header__title">{t('profile')}</h4>
           {validateErrors?.length &&
             validateErrors.map((err: ValidateProfileError) => (
               <div
