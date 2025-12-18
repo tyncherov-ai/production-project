@@ -5,7 +5,10 @@ import { RouteDecorator } from '../../src/shared/config/storybook/RouteDecorator
 import { Theme } from '../../src/app/providers/ThemeProvider';
 import '../../src/app/styles/index.scss';
 
+import { TranslationDecorator } from '../../src/shared/config/storybook/TranslationDecorator';
+
 const decorators: Decorator[] = [
+  TranslationDecorator,
   StyleDecorator,
   ThemeDecorator(Theme.LIGHT),
   RouteDecorator,

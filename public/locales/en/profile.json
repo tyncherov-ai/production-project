@@ -1,6 +1,5 @@
 {
   "profilePage": "Profile Page",
-  "errorLoadingProfile": "error loading profile",
   "profile": "Profile",
   "edit": "Edit",
   "cancel": "Cancel",
@@ -19,6 +18,7 @@
     "incorrectCountry": "Incorrect country",
     "noData": "No data",
     "serverError": "Server error",
-    "incorrectUsername": "Incorrect username"
+    "incorrectUsername": "Incorrect username",
+    "profileLoadingError": "Error loading profile"
   }
 }

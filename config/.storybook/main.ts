@@ -4,6 +4,7 @@ import { buildCssLoader } from '../build/loaders/buildCssLoader';
 import { DefinePlugin } from 'webpack';
 
 const config: StorybookConfig = {
+  staticDirs: ['../../public'],
   stories: ['../../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
     '@storybook/addon-webpack5-compiler-swc',

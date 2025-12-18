@@ -15,12 +15,16 @@
     {
       "id": "1",
       "username": "tigrarub",
-      "password": "qwerpoiuty"
+      "password": "qwerpoiuty",
+      "role": "ADMIN",
+      "avatar": "https://assets.leetcode.com/users/tyncherov_v/avatar_1757059977.png"
     },
     {
       "id": "2",
       "username": "vagaa_t",
-      "password": "qwerpoiuty"
+      "password": "qwerpoiuty",
+      "role": "USER",
+      "avatar": "https://assets.leetcode.com/users/tyncherov_v/avatar_1757059977.png"
     }
   ],
   "profile": {
@@ -125,7 +129,7 @@
         {
           "id": "4",
           "type": "CODE",
-          "code": "/* Пример CSS для микро-интеракции */\n.button {\n  transition: all 0.3s ease;\n}\n.button:hover {\n  transform: translateY(-3px);\n  box-shadow: 0 4px 8px rgba(0,0,0,0.1);\n}"
+          "code": "/* Пример CSS для микро-интеракции */\n \n.button {\n  transition: all 0.3s ease;\n}\n.button:hover {\n  transform: translateY(-3px);\n  box-shadow: 0 4px 8px rgba(0,0,0,0.1);\n}"
         }
       ]
     },
@@ -262,19 +266,19 @@
   "comments": [
     {
       "id": "1",
-      "body": "some comment",
+      "text": "some comment",
       "articleId": "1",
       "userId": "2"
     },
     {
       "id": "2",
-      "body": "another comment",
+      "text": "another comment",
       "articleId": "2",
       "userId": "1"
     },
     {
       "id": "3",
-      "body": "great article!",
+      "text": "great article!",
       "articleId": "1",
       "userId": "1"
     }

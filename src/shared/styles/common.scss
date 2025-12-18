@@ -1,0 +1,8 @@
+@use "functions" as *;
+
+.text-error {
+  color: var(--color-error);
+  font-weight: 600;
+  font-size: to-rem(14);
+  margin-block: to-rem(8);
+}

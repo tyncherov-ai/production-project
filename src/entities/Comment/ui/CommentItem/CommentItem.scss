@@ -1,0 +1,28 @@
+.comment-item {
+  display: grid;
+  grid-template-columns: to-rem(32) auto;
+  align-items: center;
+  gap: to-rem(8);
+  padding: to-rem(12);
+  border-radius: to-rem(12);
+  background-color: var(--bg-secondary);
+  transition: background-color 0.3s;
+
+  &.loading {
+    background-color: inherit;
+  }
+
+  &__username {
+    font-size: to-rem(14);
+    font-weight: 600;
+    color: var(--text-primary);
+    transition: color 0.3s;
+  }
+
+  &__text {
+    grid-column: 2 / 2;
+    font-size: to-rem(14);
+    color: var(--text-secondary);
+    transition: color 0.3s;
+  }
+}

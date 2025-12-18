@@ -29,7 +29,7 @@ const reducers: ReducersList = {
 
 const ProfilePage = () => {
   const dispatch = useAppDispatch();
-  const { t } = useTranslation('profile', { keyPrefix: 'very.deeply.nested' });
+  const { t } = useTranslation('profile');
 
   const formData = useSelector(getProfileForm);
   const isLoading = useSelector(getProfileIsLoading);

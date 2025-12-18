@@ -4,4 +4,13 @@
   &__container {
     height: 100%;
   }
+
+  &__comments {
+    font-size: to-rem(18);
+    font-weight: 600;
+
+    &:not(:last-child) {
+      margin-bottom: to-rem(12);
+    }
+  }
 }

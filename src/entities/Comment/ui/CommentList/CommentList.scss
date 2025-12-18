@@ -1,0 +1,17 @@
+.comment-list {
+  display: flex;
+  flex-direction: column;
+  gap: to-rem(12);
+  padding-block: to-rem(12);
+
+  &__error {
+    font-size: to-rem(14);
+  }
+}
+
+.comment-loader {
+  padding-block: to-rem(12);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}

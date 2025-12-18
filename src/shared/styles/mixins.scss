@@ -1,5 +1,6 @@
 @use "sass:math";
 @use "./variables" as *;
+@use "./functions" as *;
 
 // Подключение шрифта
 @mixin font($font_name, $file_name, $weight, $style) {
@@ -12,27 +13,6 @@
     font-weight: #{$weight};
     font-style: #{$style};
   }
-}
-
-// Процент
-@function percent($px, $from: 100) {
-  $result: math.div($px, $from) * 100%;
-
-  @return $result;
-}
-
-// REM
-@function to-rem($px, $current: 16) {
-  $result: math.div($px, $current) + rem;
-
-  @return $result;
-}
-
-// EM
-@function to-em($px, $current: 16) {
-  $result: math.div($px, $current) + em;
-
-  @return $result;
 }
 
 // Валюта

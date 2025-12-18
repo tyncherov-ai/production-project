@@ -1,3 +1,4 @@
 {
-    "errorLoadingArticleDetails": "Произошла ошибка при загрузке сведений о статье."
+  "errorLoadingArticleDetails": "Произошла ошибка при загрузке сведений о статье.",
+  "comments": "Комментарии"
 }

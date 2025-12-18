@@ -15,5 +15,6 @@
   "logOut": "Выйти",
   "confirm": "Подтвердить",
   "cancel": "Отменить",
-  "areYouSureYouWantToLogOut": "Вы уверены, что хотите выйти?"
+  "areYouSureYouWantToLogOut": "Вы уверены, что хотите выйти?",
+  "noCommentsError": "Комментарии отсутсвуют..."
 }

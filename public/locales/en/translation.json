@@ -15,5 +15,6 @@
   "logOut": "Log out",
   "confirm": "Confirm",
   "cancel": "Cancel",
-  "areYouSureYouWantToLogOut": "Are you sure you want to log out?"
+  "areYouSureYouWantToLogOut": "Are you sure you want to log out?",
+  "noCommentsError": "No comments..."
 }

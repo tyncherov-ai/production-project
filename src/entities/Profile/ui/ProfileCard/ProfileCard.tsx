@@ -53,7 +53,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
   if (error) {
     return (
       <div className={classNames('profile-card', {}, [className])}>
-        <p className="profile-card__error">{t('errorLoadingProfile')}</p>
+        <p className="profile-card__error">{t('errors.profileLoadingError')}</p>
       </div>
     );
   }

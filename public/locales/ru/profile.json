@@ -1,6 +1,5 @@
 {
   "profilePage": "Страница Профиля",
-  "errorLoadingProfile": "",
   "profile": "Профиль",
   "edit": "Редактировать",
   "cancel": "Отмена",
@@ -19,6 +18,7 @@
     "incorrectAge": "Неправильный возраст",
     "noData": "Нет данных",
     "serverError": "Ошибка сервера",
-    "incorrectUsername": "Неправильное имя пользователя"
+    "incorrectUsername": "Неправильное имя пользователя",
+    "profileLoadingError": "Ошибка при загрузке профиля"
   }
 }
