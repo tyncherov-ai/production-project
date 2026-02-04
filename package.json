@@ -80,7 +80,7 @@
     "webpack": "^5.69.1",
     "webpack-bundle-analyzer": "^4.10.2",
     "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^4.7.4"
+    "webpack-dev-server": "^5.2.3"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.6.1",
