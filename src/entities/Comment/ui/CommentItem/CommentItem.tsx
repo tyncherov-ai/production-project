@@ -1,8 +1,12 @@
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { classNames } from 'shared/lib/classNames/classNames';
-import './CommentItem.scss';
-import { Comment } from '../../model/types/comment';
+import { AppLink } from 'shared/ui/AppLink';
 import { Avatar } from 'shared/ui/Avatar';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+
+import { Comment } from '../../model/types/comment';
+
+import './CommentItem.scss';
 
 interface CommentItemProps {
   className?: string;
@@ -28,8 +32,13 @@ export const CommentItem = (props: CommentItemProps) => {
   }
   return (
     <div className={classNames('comment-item', {}, [className])}>
-      <Avatar size={32} src={comment.user.avatar} />
-      <p className="comment-item__username">{comment.user.username}</p>
+      <AppLink
+        to={RoutePath.profile + comment.user.id}
+        className="comment-item__header"
+      >
+        <Avatar size={32} src={comment.user.avatar} />
+        <p className="comment-item__username">{comment.user.username}</p>
+      </AppLink>
       <div className="comment-item__text">{comment.text}</div>
     </div>
   );

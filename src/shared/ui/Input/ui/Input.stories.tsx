@@ -1,4 +1,5 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-webpack5';
+
 import { Input } from './Input';
 //import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 //import { Theme } from 'app/providers/ThemeProvider';

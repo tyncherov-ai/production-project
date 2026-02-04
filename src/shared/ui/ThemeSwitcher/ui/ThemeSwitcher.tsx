@@ -1,9 +1,10 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import './ThemeSwitcher.scss';
-import { MdLightMode, MdDarkMode } from 'react-icons/md';
+import { memo } from 'react';
 import { useTheme } from 'app/providers/ThemeProvider';
 import { Theme } from 'app/providers/ThemeProvider/lib/ThemeContext';
-import { memo } from 'react';
+import { MdDarkMode, MdLightMode } from 'react-icons/md';
+import { classNames } from 'shared/lib/classNames/classNames';
+
+import './ThemeSwitcher.scss';
 
 interface ThemeSwitcherProps {
   className?: string;

@@ -1,6 +1,7 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import './PageError.scss';
 import { useTranslation } from 'react-i18next';
+import { classNames } from 'shared/lib/classNames/classNames';
+
+import './PageError.scss';
 
 interface PageErrorProps {
   className?: string;

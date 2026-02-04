@@ -1,11 +1,11 @@
-import { useTheme } from 'app/providers/ThemeProvider';
-import { AppRouter } from 'app/providers/router';
-import { Footer } from 'widgets/Footer';
 import { Suspense, useEffect } from 'react';
-import { Sidebar } from 'widgets/Sidebar';
-import { useDispatch, useSelector } from 'react-redux';
+import { AppRouter } from 'app/providers/router';
+import { useTheme } from 'app/providers/ThemeProvider';
 import { getUserInited, userActions } from 'entities/User';
+import { useDispatch, useSelector } from 'react-redux';
+import { Footer } from 'widgets/Footer';
 import { Navbar } from 'widgets/Navbar';
+import { Sidebar } from 'widgets/Sidebar';
 
 const App = () => {
   const { theme } = useTheme();

@@ -1,6 +1,3 @@
-import { Meta, StoryObj } from '@storybook/react';
-import ArticleDetailsPage from './ArticleDetailsPage';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 import { Article } from 'entities/Article';
 import {
@@ -8,6 +5,11 @@ import {
   ArticleType,
 } from 'entities/Article/model/types/article';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
+
+import { Meta, StoryObj } from '@storybook/react-webpack5';
+
+import ArticleDetailsPage from './ArticleDetailsPage';
 
 const article: Article = {
   id: '1',

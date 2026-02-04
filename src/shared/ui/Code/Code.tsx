@@ -1,7 +1,8 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import './Code.scss';
-import { GoCopy } from 'react-icons/go';
 import { memo, useCallback } from 'react';
+import { GoCopy } from 'react-icons/go';
+import { classNames } from 'shared/lib/classNames/classNames';
+
+import './Code.scss';
 
 interface CodeProps {
   className?: string;

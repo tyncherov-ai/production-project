@@ -1,8 +1,10 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import './CommentList.scss';
-import { Comment } from '../../model/types/comment';
 import { useTranslation } from 'react-i18next';
+import { classNames } from 'shared/lib/classNames/classNames';
+
+import { Comment } from '../../model/types/comment';
 import { CommentItem } from '../CommentItem/CommentItem';
+
+import './CommentList.scss';
 
 interface CommentListProps {
   className?: string;

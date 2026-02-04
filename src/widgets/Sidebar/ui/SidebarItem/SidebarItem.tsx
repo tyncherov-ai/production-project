@@ -1,5 +1,5 @@
-import { getUserAuthData } from 'entities/User';
 import { memo } from 'react';
+import { getUserAuthData } from 'entities/User';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink';

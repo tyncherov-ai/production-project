@@ -1,6 +1,7 @@
-import { useTranslation } from 'react-i18next';
-import './MainPage.scss';
 import { Counter } from 'entities/Counter';
+import { useTranslation } from 'react-i18next';
+
+import './MainPage.scss';
 
 const MainPage = () => {
   const { t } = useTranslation();

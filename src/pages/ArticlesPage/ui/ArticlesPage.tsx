@@ -1,7 +1,8 @@
 /* eslint-disable i18next/no-literal-string */
-import { classNames } from 'shared/lib/classNames/classNames';
-import './ArticlesPage.scss';
 import { memo } from 'react';
+import { classNames } from 'shared/lib/classNames/classNames';
+
+import './ArticlesPage.scss';
 
 interface ArticlesPageProps {
   className?: string;

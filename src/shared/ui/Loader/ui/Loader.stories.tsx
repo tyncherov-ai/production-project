@@ -1,7 +1,9 @@
-import { Meta, StoryObj } from '@storybook/react';
-import { Loader } from './Loader';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
+
+import { Meta, StoryObj } from '@storybook/react-webpack5';
+
+import { Loader } from './Loader';
 
 const meta: Meta<typeof Loader> = {
   title: 'shared/Loader',

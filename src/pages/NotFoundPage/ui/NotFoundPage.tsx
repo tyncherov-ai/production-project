@@ -1,7 +1,8 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import './NotFoundPage.scss';
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
+import { classNames } from 'shared/lib/classNames/classNames';
+
+import './NotFoundPage.scss';
 
 interface NotFoundPageProps {
   className?: string;

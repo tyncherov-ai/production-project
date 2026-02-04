@@ -1,30 +1,39 @@
 .loader {
-  width: to-rem(50);
+  --loader-size: 50px;
+  --loader-color-outer: var(--primary);
+  --loader-color-inner: var(--secondary);
+
+  &.loader-white {
+    --loader-color-outer: #fff;
+    --loader-color-inner: rgb(255 255 255 / 30%);
+  }
+
+  width: var(--loader-size);
   aspect-ratio: 1;
   display: grid;
-  border: to-rem(4) solid;
+  border: calc(var(--loader-size) * 0.08) solid;
   border-radius: 50%;
-  border-color: var(--primary) #0000;
+  border-color: var(--loader-color-outer) #0000;
   animation: l16 1s infinite linear;
 
   &::before,
   &::after {
     content: "";
-    grid-area: 1/1;
-    margin: to-rem(2);
+    grid-area: 1 / 1;
+    margin: calc(var(--loader-size) * 0.04);
     border: inherit;
     border-radius: 50%;
   }
 
   &::before {
-    border-color: var(--secondary) #0000;
+    border-color: var(--loader-color-inner) #0000;
     animation: inherit;
     animation-duration: 0.5s;
     animation-direction: reverse;
   }
 
   &::after {
-    margin: to-rem(8);
+    margin: calc(var(--loader-size) * 0.16);
   }
 }
 

@@ -14,29 +14,43 @@
   "users": [
     {
       "id": "1",
-      "username": "tigrarub",
-      "password": "qwerpoiuty",
-      "role": "ADMIN",
-      "avatar": "https://assets.leetcode.com/users/tyncherov_v/avatar_1757059977.png"
-    },
-    {
-      "id": "2",
       "username": "vagaa_t",
       "password": "qwerpoiuty",
       "role": "USER",
       "avatar": "https://assets.leetcode.com/users/tyncherov_v/avatar_1757059977.png"
+    },
+    {
+      "id": "2",
+      "username": "tigrarub",
+      "password": "qwerpoiuty",
+      "role": "ADMIN",
+      "avatar": "https://assets.leetcode.com/users/tyncherov_v/avatar_1757059977.png"
     }
   ],
-  "profile": {
-    "firstname": "Tigra",
-    "lastname": "Rubie",
-    "age": 20,
-    "currency": "UZS",
-    "country": "Germany",
-    "city": "Tashkent",
-    "username": "tigrarub",
-    "avatar": "https://assets.leetcode.com/users/tyncherov_v/avatar_1757059977.png"
-  },
+  "profiles": [
+    {
+      "id": "1",
+      "firstname": "Vagiz",
+      "lastname": "Tihcherov",
+      "age": 20,
+      "currency": "UZS",
+      "country": "Uzbekistan",
+      "city": "Tashkent",
+      "username": "vagaa_t",
+      "avatar": "https://assets.leetcode.com/users/tyncherov_v/avatar_1757059977.png"
+    },
+    {
+      "id": "2",
+      "firstname": "Tigra",
+      "lastname": "Rubie",
+      "age": 25,
+      "currency": "EUR",
+      "country": "Germany",
+      "city": "Berlin",
+      "username": "tigrarub",
+      "avatar": "https://assets.leetcode.com/users/tyncherov_v/avatar_1757059977.png"
+    }
+  ],
   "articles": [
     {
       "id": "1",
@@ -281,6 +295,72 @@
       "text": "great article!",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "text": "fdasdfasdfasdf",
+      "articleId": "1",
+      "userId": "1",
+      "id": "IxHTg6K"
+    },
+    {
+      "text": "fdasdfasdfasdf",
+      "articleId": "1",
+      "userId": "1",
+      "id": "rMMArH7"
+    },
+    {
+      "text": "qwerqwer",
+      "articleId": "1",
+      "userId": "2",
+      "id": "Bc6ekq7"
+    },
+    {
+      "text": "fdfasd",
+      "articleId": "1",
+      "userId": "2",
+      "id": "eEdx6b7"
+    },
+    {
+      "text": "fasdf",
+      "articleId": "1",
+      "userId": "2",
+      "id": "IoNlOja"
+    },
+    {
+      "text": "dASDasd",
+      "articleId": "1",
+      "userId": "2",
+      "id": "XAzYl1e"
+    },
+    {
+      "text": "FASDFASDF",
+      "articleId": "1",
+      "userId": "2",
+      "id": "O_U03Ch"
+    },
+    {
+      "text": "fasdfasdf",
+      "articleId": "1",
+      "userId": "2",
+      "id": "eNF9wgQ"
+    },
+    {
+      "text": "афывафыва",
+      "articleId": "1",
+      "userId": "2",
+      "id": "D0I1icu"
+    },
+    {
+      "text": "qwer",
+      "articleId": "1",
+      "userId": "2",
+      "id": "AiWAJeg"
+    },
+    {
+      "text": "йцукйцук",
+      "articleId": "2",
+      "userId": "2",
+      "id": "Kx8VUKk"
     }
   ]
 }

@@ -1,12 +1,13 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import './Navbar.scss';
-import { useTranslation } from 'react-i18next';
-import { LangSwitcher } from 'shared/ui/LangSwitcher';
 import { memo, useCallback, useState } from 'react';
-import { LoginModal } from 'features/AuthByUsername';
-import { useSelector } from 'react-redux';
 import { getUserAuthData } from 'entities/User';
+import { LoginModal } from 'features/AuthByUsername';
 import { LogoutModal } from 'features/AuthByUsername/ui/LogoutModal/LogoutModal';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { LangSwitcher } from 'shared/ui/LangSwitcher';
+
+import './Navbar.scss';
 
 interface NavbarProps {
   className?: string;

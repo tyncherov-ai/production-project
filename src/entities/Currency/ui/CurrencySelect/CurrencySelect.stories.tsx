@@ -1,7 +1,9 @@
-import { Meta, StoryObj } from '@storybook/react';
-import { CurrencySelect } from './CurrencySelect';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
+
+import { Meta, StoryObj } from '@storybook/react-webpack5';
+
+import { CurrencySelect } from './CurrencySelect';
 
 const meta: Meta<typeof CurrencySelect> = {
   title: 'entities/CurrencySelect',

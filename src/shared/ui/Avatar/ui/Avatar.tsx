@@ -1,7 +1,8 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import './Avatar.scss';
-import { GoPerson } from 'react-icons/go';
 import { CSSProperties, useMemo } from 'react';
+import { GoPerson } from 'react-icons/go';
+import { classNames } from 'shared/lib/classNames/classNames';
+
+import './Avatar.scss';
 
 interface AvatarProps {
   className?: string;

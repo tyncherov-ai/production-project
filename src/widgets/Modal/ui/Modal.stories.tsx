@@ -1,7 +1,10 @@
-import { Meta, StoryObj } from '@storybook/react';
-import Modal from './Modal';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
+
+import { Meta, StoryObj } from '@storybook/react-webpack5';
+
+import Modal from './Modal';
+
 import 'app/styles/index.scss'; // Подключение глобальных стилей
 
 const meta: Meta<typeof Modal> = {

@@ -1,6 +1,7 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import './Select.scss';
 import { memo, useMemo } from 'react';
+import { classNames } from 'shared/lib/classNames/classNames';
+
+import './Select.scss';
 
 export interface SelectOption {
   value: string;

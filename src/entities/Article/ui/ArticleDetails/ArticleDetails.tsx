@@ -1,21 +1,22 @@
 import { memo, useCallback, useEffect } from 'react';
-import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
+import { useTranslation } from 'react-i18next';
+import { GoCalendar, GoEye } from 'react-icons/go';
+import { useSelector } from 'react-redux';
 import {
   DynamicModuleLoader,
   ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
-import { useSelector } from 'react-redux';
+import { Avatar } from 'shared/ui/Avatar';
+import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+
 import {
   getArticleDetailsData,
   getArticleDetailsError,
   getArticleDetailsIsLoading,
 } from '../../model/selectors/articleDetails';
-import { useTranslation } from 'react-i18next';
-import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
-import { Avatar } from 'shared/ui/Avatar';
-import { GoCalendar, GoEye } from 'react-icons/go';
+import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
+import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';

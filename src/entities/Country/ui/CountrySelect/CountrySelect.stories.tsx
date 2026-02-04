@@ -1,7 +1,9 @@
-import { Meta, StoryObj } from '@storybook/react';
-import { CountrySelect } from './CountrySelect';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
+
+import { Meta, StoryObj } from '@storybook/react-webpack5';
+
+import { CountrySelect } from './CountrySelect';
 
 const meta: Meta<typeof CountrySelect> = {
   title: 'entities/CountrySelect',

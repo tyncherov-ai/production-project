@@ -1,7 +1,13 @@
+import { fileURLToPath } from 'node:url';
+import path, { dirname } from 'path';
+import webpack from 'webpack';
+
 import type { StorybookConfig } from '@storybook/react-webpack5';
-import path from 'path';
-import { buildCssLoader } from '../build/loaders/buildCssLoader';
-import { DefinePlugin } from 'webpack';
+
+import { buildCssLoader } from '../build/loaders/buildCssLoader.ts';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const config: StorybookConfig = {
   staticDirs: ['../../public'],
@@ -9,9 +15,8 @@ const config: StorybookConfig = {
   addons: [
     '@storybook/addon-webpack5-compiler-swc',
     '@storybook/addon-onboarding',
-    '@storybook/addon-essentials',
     '@chromatic-com/storybook',
-    '@storybook/addon-interactions',
+    '@storybook/addon-docs',
   ],
   framework: {
     name: '@storybook/react-webpack5',
@@ -44,7 +49,7 @@ const config: StorybookConfig = {
       };
     }
     config.plugins?.push(
-      new DefinePlugin({
+      new webpack.DefinePlugin({
         __IS_DEV__: JSON.stringify(true),
         __API__: JSON.stringify(''),
         __PROJECT__: JSON.stringify('storybook'),

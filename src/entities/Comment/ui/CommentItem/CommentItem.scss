@@ -12,6 +12,13 @@
     background-color: inherit;
   }
 
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: to-rem(8);
+    grid-column: 1 / -1;
+  }
+
   &__username {
     font-size: to-rem(14);
     font-weight: 600;

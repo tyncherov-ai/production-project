@@ -1,6 +1,7 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import './Input.scss';
 import { InputHTMLAttributes, memo } from 'react';
+import { classNames } from 'shared/lib/classNames/classNames';
+
+import './Input.scss';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   className?: string;

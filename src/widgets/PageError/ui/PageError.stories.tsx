@@ -1,7 +1,9 @@
-import { Meta, StoryObj } from '@storybook/react';
-import PageError from './PageError';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
+
+import { Meta, StoryObj } from '@storybook/react-webpack5';
+
+import PageError from './PageError';
 
 const meta: Meta<typeof PageError> = {
   title: 'widgets/PageError',

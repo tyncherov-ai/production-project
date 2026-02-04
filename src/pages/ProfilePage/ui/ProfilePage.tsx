@@ -1,8 +1,6 @@
-import './ProfilePage.scss';
-import {
-  DynamicModuleLoader,
-  ReducersList,
-} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useEffect } from 'react';
+import { Country } from 'entities/Country';
+import { Currency } from 'entities/Currency';
 import {
   fetchProfileData,
   getProfileError,
@@ -15,13 +13,19 @@ import {
   profileReducer,
   ValidateProfileError,
 } from 'entities/Profile';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import { ProfilePageFooter } from './ProfilePageFooter/ProfilePageFooter';
-import { Currency } from 'entities/Currency';
-import { Country } from 'entities/Country';
+import { getUserAuthData } from 'entities/User';
 import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import {
+  DynamicModuleLoader,
+  ReducersList,
+} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+
+import { ProfilePageFooter } from './ProfilePageFooter/ProfilePageFooter';
+
+import './ProfilePage.scss';
 
 const reducers: ReducersList = {
   profile: profileReducer,
@@ -30,12 +34,16 @@ const reducers: ReducersList = {
 const ProfilePage = () => {
   const dispatch = useAppDispatch();
   const { t } = useTranslation('profile');
+  const { id } = useParams<{ id: string }>();
 
+  const authData = useSelector(getUserAuthData);
   const formData = useSelector(getProfileForm);
   const isLoading = useSelector(getProfileIsLoading);
   const error = useSelector(getProfileError);
   const readonly = useSelector(getProfileReadonly);
   const validateErrors = useSelector(getProfileValidateErrors);
+
+  const profileId = id || authData?.id;
 
   const validateErrorsTranslates = {
     [ValidateProfileError.INCORRECT_USER_DATA]: t('errors.incorrectUserData'),
@@ -47,8 +55,9 @@ const ProfilePage = () => {
   };
 
   useEffect(() => {
-    if (__PROJECT__ !== 'storybook') dispatch(fetchProfileData());
-  }, [dispatch]);
+    if (__PROJECT__ !== 'storybook' && profileId)
+      dispatch(fetchProfileData(profileId));
+  }, [dispatch, profileId]);
 
   const onChangeFirstName = (value?: string) => {
     dispatch(profileActions.updateProfile({ firstname: value || '' }));

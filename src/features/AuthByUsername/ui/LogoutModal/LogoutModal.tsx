@@ -1,11 +1,12 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import './LogoutModal.scss';
-import { Modal } from 'widgets/Modal';
-import { Button } from 'shared/ui/Button/ui/Button';
 import { useCallback } from 'react';
 import { userActions } from 'entities/User';
-import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
+import { useDispatch } from 'react-redux';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { Button } from 'shared/ui/Button/ui/Button';
+import { Modal } from 'widgets/Modal';
+
+import './LogoutModal.scss';
 
 interface LogoutModalProps {
   className?: string;

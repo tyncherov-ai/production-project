@@ -1,7 +1,8 @@
+import { memo, useCallback } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Select } from 'shared/ui/Select';
+
 import { Currency } from '../../model/types';
-import { memo, useCallback } from 'react';
 
 interface CurrencySelectProps {
   className?: string;

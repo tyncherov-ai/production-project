@@ -1,10 +1,12 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import './Sidebar.scss';
-import { GoSidebarExpand } from 'react-icons/go';
 import { memo, useMemo, useState } from 'react';
+import { GoSidebarExpand } from 'react-icons/go';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
 import { SidebarItemsList } from 'widgets/Sidebar/model/items';
+
 import { SidebarItem } from '../SidebarItem/SidebarItem';
+
+import './Sidebar.scss';
 
 interface SidebarProps {
   className?: string;

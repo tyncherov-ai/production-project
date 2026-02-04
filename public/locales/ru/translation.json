@@ -16,5 +16,7 @@
   "confirm": "Подтвердить",
   "cancel": "Отменить",
   "areYouSureYouWantToLogOut": "Вы уверены, что хотите выйти?",
-  "noCommentsError": "Комментарии отсутсвуют..."
+  "noCommentsError": "Комментарии отсутсвуют...",
+  "enterComment": "Введите ваш комментарий...",
+  "send": "Отправить"
 }

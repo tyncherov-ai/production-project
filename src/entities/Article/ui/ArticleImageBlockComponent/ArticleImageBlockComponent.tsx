@@ -1,6 +1,7 @@
-import { ArticleImageBlock } from 'entities/Article/model/types/article';
 import { memo } from 'react';
+import { ArticleImageBlock } from 'entities/Article/model/types/article';
 import { classNames } from 'shared/lib/classNames/classNames';
+
 import './ArticleImageBlockComponent.scss';
 
 interface ArticleImageBlockComponentProps {

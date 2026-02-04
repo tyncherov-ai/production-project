@@ -1,23 +1,27 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import './ArticleDetailsPage.scss';
-import { memo, useEffect } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 import { ArticleDetails } from 'entities/Article';
-import { useParams } from 'react-router-dom';
-import './ArticleDetailsPage.scss';
-import { useTranslation } from 'react-i18next';
 import { CommentList } from 'entities/Comment';
+import { AddCommentForm } from 'features/addCommentForm';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import { classNames } from 'shared/lib/classNames/classNames';
 import {
   DynamicModuleLoader,
   ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+
+import { getArticleCommentsIsLoading } from '../model/selectors/comments';
+import { addCommentForArticle } from '../model/services/addCommentForArticle/addCommentForArticle';
+import { fetchCommentsByArticleId } from '../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import {
   articleDetailsCommentsReducer,
   getArticleComments,
 } from '../model/slices/ArticleDetailsCommentsSlice';
-import { useSelector } from 'react-redux';
-import { getArticleCommentsIsLoading } from '../model/selectors/comments';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { fetchCommentsByArticleId } from '../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+
+import './ArticleDetailsPage.scss';
+import './ArticleDetailsPage.scss';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -34,11 +38,19 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   const comments = useSelector(getArticleComments.selectAll);
   const isLoading = useSelector(getArticleCommentsIsLoading);
 
+  const onSendComment = useCallback(
+    (text: string) => {
+      dispatch(addCommentForArticle(text));
+    },
+    [dispatch],
+  );
+
   useEffect(() => {
     if (__PROJECT__ !== 'storybook') {
       dispatch(fetchCommentsByArticleId(id));
     }
   }, [dispatch, id]);
+
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <div
@@ -51,7 +63,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
         <div className="article-details-page__container">
           {id && <ArticleDetails id={id} />}
           <h2 className="article-details-page__comments">{t('comments')}</h2>
-
+          <AddCommentForm onSendComment={onSendComment} />
           <CommentList isLoading={isLoading} comments={comments} />
         </div>
       </div>

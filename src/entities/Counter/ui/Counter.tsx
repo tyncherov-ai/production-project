@@ -1,8 +1,10 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import './Counter.scss';
 import { useDispatch, useSelector } from 'react-redux';
+import { classNames } from 'shared/lib/classNames/classNames';
+
 import { getCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
 import { counterActions } from '../model/slice/counterSlice';
+
+import './Counter.scss';
 
 interface CounterProps {
   className?: string;
