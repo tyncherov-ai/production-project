@@ -3,7 +3,8 @@ import { getUserAuthData } from 'entities/User';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink';
-import { SidebarItemType } from 'widgets/Sidebar/model/items';
+
+import { SidebarItemType } from '../../model/types/sidebar';
 
 interface SidebarItemProps {
   className?: string;

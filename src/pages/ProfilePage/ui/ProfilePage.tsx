@@ -13,7 +13,6 @@ import {
   profileReducer,
   ValidateProfileError,
 } from 'entities/Profile';
-import { getUserAuthData } from 'entities/User';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
@@ -36,14 +35,11 @@ const ProfilePage = () => {
   const { t } = useTranslation('profile');
   const { id } = useParams<{ id: string }>();
 
-  const authData = useSelector(getUserAuthData);
   const formData = useSelector(getProfileForm);
   const isLoading = useSelector(getProfileIsLoading);
   const error = useSelector(getProfileError);
   const readonly = useSelector(getProfileReadonly);
   const validateErrors = useSelector(getProfileValidateErrors);
-
-  const profileId = id || authData?.id;
 
   const validateErrorsTranslates = {
     [ValidateProfileError.INCORRECT_USER_DATA]: t('errors.incorrectUserData'),
@@ -55,9 +51,8 @@ const ProfilePage = () => {
   };
 
   useEffect(() => {
-    if (__PROJECT__ !== 'storybook' && profileId)
-      dispatch(fetchProfileData(profileId));
-  }, [dispatch, profileId]);
+    if (__PROJECT__ !== 'storybook' && id) dispatch(fetchProfileData(id));
+  }, [dispatch, id]);
 
   const onChangeFirstName = (value?: string) => {
     dispatch(profileActions.updateProfile({ firstname: value || '' }));

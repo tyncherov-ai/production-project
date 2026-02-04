@@ -1,8 +1,9 @@
 import { memo, useMemo, useState } from 'react';
 import { GoSidebarExpand } from 'react-icons/go';
+import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
-import { SidebarItemsList } from 'widgets/Sidebar/model/items';
+import { getSidebarItems } from 'widgets/Sidebar/model/selectors/getSidebarItems';
 
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 
@@ -15,15 +16,17 @@ interface SidebarProps {
 const Sidebar = memo(({ className }: SidebarProps) => {
   const [collapsed, setCollapsed] = useState(true);
 
+  const sidebarItemsList = useSelector(getSidebarItems);
+
   const onToggle = () => {
     setCollapsed((prev) => !prev);
   };
 
   const itemsList = useMemo(() => {
-    return SidebarItemsList.map((item) => (
+    return sidebarItemsList.map((item) => (
       <SidebarItem key={item.path} item={item} className="sidebar__item" />
     ));
-  }, []);
+  }, [sidebarItemsList]);
 
   return (
     <aside
