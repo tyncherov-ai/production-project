@@ -11,6 +11,7 @@ interface ArtilcleListProps {
   isLoading?: boolean;
   view?: ArticleView;
   articles: Article[];
+  error?: string | undefined;
 }
 
 export const ArticleList = (props: ArtilcleListProps) => {
@@ -25,7 +26,7 @@ export const ArticleList = (props: ArtilcleListProps) => {
   if (isLoading) {
     return (
       <div className={classNames('article-list', {}, [className, viewClass])}>
-        {new Array(view === ArticleView.SMALL ? 9 : 3)
+        {new Array(view === ArticleView.SMALL ? 6 : 2)
           .fill(0)
           .map((_, index) => (
             <ArticleListItemSkeleton key={index} view={view} />

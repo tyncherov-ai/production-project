@@ -21,6 +21,11 @@
     &:hover {
       transform: translateY(to-rem(-2));
       border-color: var(--primary);
+
+      .article-item__image-date {
+        opacity: 1;
+        visibility: visible;
+      }
     }
   }
 
@@ -71,8 +76,9 @@
     color: #fff;
     font-size: to-rem(12);
     line-height: 1.2;
-    opacity: 1;
-    visibility: visible;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
   }
 
   // .article-item__title
@@ -135,7 +141,6 @@
     font-size: to-rem(14);
     line-height: 1.45;
     display: -webkit-box;
-    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }

@@ -1,0 +1,23 @@
+.article-view-selector {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: to-rem(8);
+
+  &__button {
+    padding: to-rem(8);
+    border-radius: 50%;
+    transition: background-color 0.3s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: var(--bg-secondary);
+      }
+    }
+  }
+
+  &__button--active {
+    background-color: var(--bg-secondary);
+    pointer-events: none;
+  }
+}

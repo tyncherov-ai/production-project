@@ -18,7 +18,7 @@ import { fetchCommentsByArticleId } from '../model/services/fetchCommentsByArtic
 import {
   articleDetailsCommentsReducer,
   getArticleComments,
-} from '../model/slices/ArticleDetailsCommentsSlice';
+} from '../model/slices/articleDetailsCommentsSlice';
 
 import './ArticleDetailsPage.scss';
 import './ArticleDetailsPage.scss';

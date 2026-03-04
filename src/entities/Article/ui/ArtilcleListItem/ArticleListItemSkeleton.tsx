@@ -3,8 +3,6 @@ import { Skeleton } from 'shared/ui';
 
 import { ArticleView } from '../../model/types/article';
 
-// import './ArticleListItemSkeleton.scss';
-
 interface ArticleListItemSkeletonProps {
   className?: string;
   view: ArticleView;
@@ -51,12 +49,8 @@ export const ArticleListItemSkeleton = ({
           />
           <div className="article-item__footer">
             <div className="article-item__info">
-              <div className="article-item__comments">
-                <Skeleton width={53} height={27} />
-              </div>
-              <div className="article-item__views">
-                <Skeleton width={69} height={27} />
-              </div>
+              <Skeleton width={53} height={27} border="999px" />
+              <Skeleton width={69} height={27} border="999px" />
             </div>
             <Skeleton
               className="article-item__open-link"
@@ -84,12 +78,8 @@ export const ArticleListItemSkeleton = ({
         <Skeleton className="article-item__type" width={112} height={27} />
         <Skeleton className="article-item__title" width={'100%'} height={18} />
         <div className="article-item__info">
-          <div className="article-item__comments">
-            <Skeleton width={53} height={27} />
-          </div>
-          <div className="article-item__views">
-            <Skeleton width={69} height={27} />
-          </div>
+          <Skeleton width={53} height={27} border="999px" />
+          <Skeleton width={69} height={27} border="999px" />
         </div>
       </div>
     </div>
