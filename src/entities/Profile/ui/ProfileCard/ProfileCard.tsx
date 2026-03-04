@@ -2,8 +2,7 @@ import { Country, CountrySelect } from 'entities/Country';
 import { Currency, CurrencySelect } from 'entities/Currency';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Avatar } from 'shared/ui/Avatar';
-import { Input } from 'shared/ui/Input';
+import { Avatar, Input } from 'shared/ui';
 import { PageLoader } from 'widgets/PageLoader';
 
 import { Profile } from '../../model/types/profile';

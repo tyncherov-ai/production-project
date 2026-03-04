@@ -17,6 +17,7 @@
     align-items: center;
     gap: to-rem(8);
     grid-column: 1 / -1;
+    justify-self: start;
   }
 
   &__username {

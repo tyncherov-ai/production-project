@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes, FC, memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Loader } from 'shared/ui/Loader/ui/Loader';
+import { Loader } from 'shared/ui';
 
 import './Button.scss';
 

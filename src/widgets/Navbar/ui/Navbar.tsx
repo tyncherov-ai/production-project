@@ -5,7 +5,7 @@ import { LogoutModal } from 'features/AuthByUsername/ui/LogoutModal/LogoutModal'
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { LangSwitcher } from 'shared/ui/LangSwitcher';
+import { LangSwitcher } from 'shared/ui';
 
 import './Navbar.scss';
 

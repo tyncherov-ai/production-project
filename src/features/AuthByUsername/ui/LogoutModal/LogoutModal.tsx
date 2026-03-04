@@ -3,7 +3,7 @@ import { userActions } from 'entities/User';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Button } from 'shared/ui/Button/ui/Button';
+import { Button } from 'shared/ui';
 import { Modal } from 'widgets/Modal';
 
 import './LogoutModal.scss';

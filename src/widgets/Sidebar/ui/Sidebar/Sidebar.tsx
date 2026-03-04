@@ -2,7 +2,7 @@ import { memo, useMemo, useState } from 'react';
 import { GoSidebarExpand } from 'react-icons/go';
 import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
+import { ThemeSwitcher } from 'shared/ui';
 import { getSidebarItems } from 'widgets/Sidebar/model/selectors/getSidebarItems';
 
 import { SidebarItem } from '../SidebarItem/SidebarItem';

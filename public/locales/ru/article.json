@@ -1,4 +1,5 @@
 {
   "errorLoadingArticleDetails": "Произошла ошибка при загрузке сведений о статье.",
-  "comments": "Комментарии"
+  "comments": "Комментарии",
+  "openArticle": "Открыть статью"
 }

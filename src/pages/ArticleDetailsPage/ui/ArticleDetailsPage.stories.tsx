@@ -18,6 +18,12 @@ const article: Article = {
   img: 'https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
   views: 2543,
   createdAt: '15.01.2025',
+  user: {
+    id: '1',
+    username: 'vagaa_t',
+    avatar:
+      'https://assets.leetcode.com/users/tyncherov_v/avatar_1757059977.png',
+  },
   type: [ArticleType.IT, ArticleType.SCIENCE],
   blocks: [
     {

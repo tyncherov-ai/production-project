@@ -24,7 +24,7 @@
       "username": "tigrarub",
       "password": "qwerpoiuty",
       "role": "ADMIN",
-      "avatar": "https://assets.leetcode.com/users/tyncherov_v/avatar_1757059977.png"
+      "avatar": ""
     }
   ],
   "profiles": [
@@ -59,6 +59,7 @@
       "img": "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "views": 2543,
       "createdAt": "15.01.2025",
+      "userId": "1",
       "type": [
         "IT",
         "Frontend"
@@ -111,6 +112,7 @@
       "img": "https://images.pexels.com/photos/326503/pexels-photo-326503.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "views": 1876,
       "createdAt": "01.02.2025",
+      "userId": "2",
       "type": [
         "Design",
         "Frontend"
@@ -154,6 +156,7 @@
       "img": "https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "views": 3120,
       "createdAt": "10.03.2025",
+      "userId": "1",
       "type": [
         "IT",
         "Security"
@@ -197,6 +200,7 @@
       "img": "https://images.pexels.com/photos/3861964/pexels-photo-3861964.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "views": 2890,
       "createdAt": "20.04.2025",
+      "userId": "2",
       "type": [
         "IT",
         "Cloud"
@@ -240,6 +244,7 @@
       "img": "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "views": 4500,
       "createdAt": "05.05.2025",
+      "userId": "1",
       "type": [
         "IT",
         "AI"

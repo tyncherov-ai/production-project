@@ -7,8 +7,7 @@ import {
   ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { Avatar } from 'shared/ui/Avatar';
-import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import { Avatar, Skeleton } from 'shared/ui';
 
 import {
   getArticleDetailsData,

@@ -1,0 +1,30 @@
+.article-list {
+  display: grid;
+  gap: to-rem(16);
+
+  &--small {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &--big {
+    grid-template-columns: 1fr;
+  }
+
+  @media (max-width: to-em(1199.98)) {
+    &--small {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: to-em(991.98)) {
+    &--small {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: to-em(575.98)) {
+    &--small {
+      grid-template-columns: 1fr;
+    }
+  }
+}
