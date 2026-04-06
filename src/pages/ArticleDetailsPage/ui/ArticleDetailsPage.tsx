@@ -11,6 +11,7 @@ import {
   ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { Page } from 'shared/ui';
 
 import { getArticleCommentsIsLoading } from '../model/selectors/comments';
 import { addCommentForArticle } from '../model/services/addCommentForArticle/addCommentForArticle';
@@ -53,20 +54,14 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div
-        className={classNames(
-          'page__article-details article-details-page',
-          {},
-          [className],
-        )}
-      >
+      <Page className={classNames('article-details-page', {}, [className])}>
         <div className="article-details-page__container">
           {id && <ArticleDetails id={id} />}
           <h2 className="article-details-page__comments">{t('comments')}</h2>
           <AddCommentForm onSendComment={onSendComment} />
           <CommentList isLoading={isLoading} comments={comments} />
         </div>
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 };

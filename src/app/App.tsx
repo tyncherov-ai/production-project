@@ -29,7 +29,7 @@ const App = () => {
         <Sidebar />
         <div className="wrapper">
           <Navbar />
-          <main className="page">{inited && <AppRouter />}</main>
+          <main className="app__content">{inited && <AppRouter />}</main>
           <Footer />
         </div>
       </Suspense>

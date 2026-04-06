@@ -1,17 +1,19 @@
-import { memo, useEffect } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 import { ArticleList, ArticleView } from 'entities/Article';
 import { ArticleViewSelector } from 'features/articleViewSelector';
 import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { Page } from 'shared/ui';
 
 import {
-  getArticlesError,
-  getArticlesIsLoading,
-  getArticlesView,
+  getArticlesPageError,
+  getArticlesPageIsLoading,
+  getArticlesPageView,
 } from '../model/selectors/articles';
 import { fetchArticlesList } from '../model/services/fetchArticlesList/fetchArticlesList';
+import { fetchNextArticlesPage } from '../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import {
   articlesPageActions,
   articlesPageReducer,
@@ -31,14 +33,14 @@ const reducers: ReducersList = {
 const ArticlesPage = ({ className }: ArticlesPageProps) => {
   const dispatch = useAppDispatch();
   const articles = useSelector(getArticles.selectAll);
-  const isLoading = useSelector(getArticlesIsLoading);
-  const view = useSelector(getArticlesView);
-  const error = useSelector(getArticlesError);
+  const isLoading = useSelector(getArticlesPageIsLoading);
+  const view = useSelector(getArticlesPageView);
+  const error = useSelector(getArticlesPageError);
 
   useEffect(() => {
     if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchArticlesList());
       dispatch(articlesPageActions.initState());
+      dispatch(fetchArticlesList({ page: 1 }));
     }
   }, [dispatch]);
 
@@ -46,12 +48,19 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
     dispatch(articlesPageActions.setView(newView));
   };
 
+  const onLoadNextPart = useCallback(() => {
+    dispatch(fetchNextArticlesPage());
+  }, [dispatch]);
+
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <div className={classNames('page__articles articles', {}, [className])}>
-        <div className="articles__container">
+      <Page
+        onScrollEnd={onLoadNextPart}
+        className={classNames('page-articles', {}, [className])}
+      >
+        <div className="page-articles__container">
           <ArticleViewSelector
-            className="articles__view-selector"
+            className="page-articles__view-selector"
             view={view}
             onViewClick={onChangeView}
           />
@@ -62,7 +71,7 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
             error={error}
           />
         </div>
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 };

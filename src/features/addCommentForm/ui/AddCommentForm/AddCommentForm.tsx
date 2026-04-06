@@ -1,5 +1,6 @@
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
+import { MdSend } from 'react-icons/md';
 import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import {
@@ -62,7 +63,7 @@ const AddCommentForm = ({ className, onSendComment }: AddCommentFormProps) => {
           onClick={onSendHandler}
           className="comment-form__button"
         >
-          {t('send')}
+          <MdSend size={18} />
         </Button>
       </div>
     </DynamicModuleLoader>

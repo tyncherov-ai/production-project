@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { Page } from 'shared/ui';
 
 import './NotFoundPage.scss';
 
@@ -11,16 +12,16 @@ interface NotFoundPageProps {
 const NotFoundPage = ({ className }: NotFoundPageProps) => {
   const { t } = useTranslation();
   return (
-    <div className={classNames('page__not-found not-found', {}, [className])}>
-      <section className="not-found__container">
-        <div className="not-found__body">
-          <h1 className="not-found__title">{t('pageNotFound')}</h1>
-          <Link to="/" className="not-found__link">
+    <Page className={classNames('page-not-found', {}, [className])}>
+      <section className="page-not-found__container">
+        <div className="page-not-found__body">
+          <h1 className="page-not-found__title">{t('pageNotFound')}</h1>
+          <Link to="/" className="page-not-found__link">
             {t('returnToHomepage')}
           </Link>
         </div>
       </section>
-    </div>
+    </Page>
   );
 };
 

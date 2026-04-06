@@ -1,5 +1,6 @@
 import { Counter } from 'entities/Counter';
 import { useTranslation } from 'react-i18next';
+import { Page } from 'shared/ui';
 
 import './MainPage.scss';
 
@@ -7,12 +8,12 @@ const MainPage = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="page__main main">
-      <div className="main__container">
+    <Page className="page-main">
+      <div className="page-main__container">
         <div> {t('main')}</div>
         <Counter />
       </div>
-    </div>
+    </Page>
   );
 };
 

@@ -21,6 +21,7 @@ import {
   ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { Page } from 'shared/ui';
 
 import { ProfilePageFooter } from './ProfilePageFooter/ProfilePageFooter';
 
@@ -88,14 +89,14 @@ const ProfilePage = () => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className="page__profile profile">
-        <div className="profile__container">
-          <h4 className="profile-header__title">{t('profile')}</h4>
+      <Page className="page-profile">
+        <div className="page-profile__container">
+          <h4 className="page-profile-header__title">{t('profile')}</h4>
           {validateErrors?.length &&
             validateErrors.map((err: ValidateProfileError) => (
               <div
                 key={err}
-                className="profile__validate-error"
+                className="page-profile__validate-error"
                 data-testid="ProfilePage.Error"
               >
                 {validateErrorsTranslates[err]}
@@ -117,7 +118,7 @@ const ProfilePage = () => {
           />
           <ProfilePageFooter />
         </div>
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 };

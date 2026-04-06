@@ -23,21 +23,15 @@ export const ArticleList = (props: ArtilcleListProps) => {
     return <ArticleListItem key={article.id} article={article} view={view} />;
   };
 
-  if (isLoading) {
-    return (
-      <div className={classNames('article-list', {}, [className, viewClass])}>
-        {new Array(view === ArticleView.SMALL ? 6 : 2)
+  return (
+    <div className={classNames('article-list', {}, [className, viewClass])}>
+      {articles.length > 0 ? articles.map(renderArticle) : null}
+      {isLoading &&
+        new Array(view === ArticleView.SMALL ? 6 : 2)
           .fill(0)
           .map((_, index) => (
             <ArticleListItemSkeleton key={index} view={view} />
           ))}
-      </div>
-    );
-  }
-
-  return (
-    <div className={classNames('article-list', {}, [className, viewClass])}>
-      {articles.length > 0 ? articles.map(renderArticle) : null}
     </div>
   );
 };

@@ -230,7 +230,7 @@
 
   &--big &__image {
     border-radius: to-rem(14);
-    min-height: to-rem(280);
+    max-height: to-rem(280);
     height: 100%;
     aspect-ratio: auto;
   }
