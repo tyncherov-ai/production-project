@@ -12,8 +12,8 @@ import {
   getArticlesPageIsLoading,
   getArticlesPageView,
 } from '../model/selectors/articles';
-import { fetchArticlesList } from '../model/services/fetchArticlesList/fetchArticlesList';
 import { fetchNextArticlesPage } from '../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
+import { initArticlesPage } from '../model/services/initArticlesPage/initArticlesPage';
 import {
   articlesPageActions,
   articlesPageReducer,
@@ -39,8 +39,7 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
 
   useEffect(() => {
     if (__PROJECT__ !== 'storybook') {
-      dispatch(articlesPageActions.initState());
-      dispatch(fetchArticlesList({ page: 1 }));
+      dispatch(initArticlesPage());
     }
   }, [dispatch]);
 

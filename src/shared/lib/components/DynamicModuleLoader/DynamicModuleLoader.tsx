@@ -16,13 +16,18 @@ interface DynamicModuleLoaderProps {
 }
 
 export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
-  const { reducers, removeAfterUnmount = true, children } = props;
+  const { reducers, removeAfterUnmount = false, children } = props;
   const store = useStore() as ReduxStoreWithManager;
   const dispatch = useDispatch();
   useEffect(() => {
+    const mountedReducers = store.reducerManager.getReducerMap();
+
     Object.entries(reducers).forEach(([reducerKey, reducer]) => {
-      store.reducerManager.add(reducerKey as StateSchemaKey, reducer);
-      dispatch({ type: `@INIT ${reducerKey} reducer` });
+      const mounted = mountedReducers[reducerKey as StateSchemaKey];
+      if (!mounted) {
+        store.reducerManager.add(reducerKey as StateSchemaKey, reducer);
+        dispatch({ type: `@INIT ${reducerKey} reducer` });
+      }
     });
 
     return () => {

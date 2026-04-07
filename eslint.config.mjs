@@ -4,6 +4,7 @@ import eslintPluginPrettier from 'eslint-plugin-prettier/recommended';
 import pluginReact from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
+import unusedImports from 'eslint-plugin-unused-imports';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
@@ -12,7 +13,12 @@ import pluginJs from '@eslint/js';
 export default defineConfig([
   { files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'] },
   { ignores: ['node_modules/', 'build/', 'storybook-static/', 'json-server/'] },
-  { plugins: { 'simple-import-sort': simpleImportSort } },
+  {
+    plugins: {
+      'simple-import-sort': simpleImportSort,
+      'unused-imports': unusedImports,
+    },
+  },
   {
     languageOptions: {
       globals: {
@@ -43,6 +49,7 @@ export default defineConfig([
       ],
       'react/react-in-jsx-scope': 'off',
       'no-unused-vars': 'off',
+      'unused-imports/no-unused-imports': 'error',
       '@typescript-eslint/no-unused-vars': 'warn',
       'react/jsx-closing-bracket-location': [1, 'tag-aligned'],
       'react-hooks/rules-of-hooks': 'error',
