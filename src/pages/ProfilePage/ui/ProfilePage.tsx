@@ -21,7 +21,7 @@ import {
   ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { Page } from 'shared/ui';
+import { Page } from 'widgets/Page';
 
 import { ProfilePageFooter } from './ProfilePageFooter/ProfilePageFooter';
 

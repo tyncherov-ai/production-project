@@ -16,22 +16,24 @@ const articlesAdapter = createEntityAdapter<Article, EntityId>({
   selectId: (article: Article) => article.id,
 });
 
+const initialState = articlesAdapter.getInitialState<ArticlesPageSchema>({
+  isLoading: false,
+  error: undefined,
+  ids: [],
+  entities: {},
+  view: ArticleView.SMALL,
+  page: 1,
+  hasMore: true,
+  _inited: false,
+});
+
 export const getArticles = articlesAdapter.getSelectors<StateSchema>(
-  (state) => state.articlesPage || articlesAdapter.getInitialState(),
+  (state) => state.articlesPage ?? initialState,
 );
 
 const articlePageSlice = createSlice({
   name: 'articlePageSlice',
-  initialState: articlesAdapter.getInitialState<ArticlesPageSchema>({
-    isLoading: false,
-    error: undefined,
-    ids: [],
-    entities: {},
-    view: ArticleView.SMALL,
-    page: 1,
-    hasMore: true,
-    _inited: false,
-  }),
+  initialState,
   reducers: {
     setView: (state, action: PayloadAction<ArticleView>) => {
       state.view = action.payload;

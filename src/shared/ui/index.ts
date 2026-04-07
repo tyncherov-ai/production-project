@@ -5,7 +5,6 @@ export { Code } from './Code/Code';
 export { Input } from './Input/Input';
 export { LangSwitcher } from './LangSwitcher/LangSwitcher';
 export { Loader } from './Loader/Loader';
-export { Page } from './Page/Page';
 export { Portal } from './Portal/Portal';
 export { Select } from './Select/Select';
 export { Skeleton } from './Skeleton/Skeleton';

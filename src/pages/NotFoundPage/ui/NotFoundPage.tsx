@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Page } from 'shared/ui';
+import { Page } from 'widgets/Page';
 
 import './NotFoundPage.scss';
 
